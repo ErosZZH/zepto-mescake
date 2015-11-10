@@ -1,0 +1,79 @@
+<!--load static file cross domain-->
+<script>
+    window.debugMode = <%=DEBUG%>;
+    if (location.href.indexOf('debug') > -1 && window.localStorage) {
+        window.localStorage.clear();
+    }
+    (function () {
+        var config = window.staticConfig;
+        var root = '<%=STATIC_DOMAIN%>';
+        var get = function (key) {
+            return window.localStorage ? localStorage.getItem(key) : false;
+        };
+        var set = function (key, value) {
+            return window.localStorage ? localStorage.setItem(key, value) : false;
+        };
+        var _xhr;
+        var httpGet = function (url, callback) {
+            var _xhr = null;
+            try {
+                _xhr = new window.XMLHttpRequest();
+            } catch (ex) {
+                try {
+                    _xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (ex) {
+                }
+            }
+            _xhr.onreadystatechange = function () {
+                try {
+                    if (_xhr.readyState == 4 && _xhr.status == 200) {
+                        callback(_xhr.responseText);
+                    }
+                } catch (ex) {
+
+                }
+            }
+            _xhr.open('get', url, false);
+            _xhr.send(null);
+        }
+
+        var _loader = function (path) {
+            var src = root + path;
+            var version = config[path];
+            var data = get(path);
+            if (data !== null && get(path + 'version') == version && window.localStorage) {
+                if (/\.css/.test(path)) {
+                    data = data.replace(/img\//gi, root + '/touch/css/img/');
+                    var stylesheet = '<style type="text/css">' + data + '<\/style>';
+                    document.write(stylesheet);
+                } else {
+                    var script = '<script>' + data + '<\/script>';
+                    document.write(script);
+                }
+            } else {
+                if (/\.css/.test(path)) {
+                    document.write('<link rel="stylesheet" type="text/css" href="' + src + '" />');
+                } else {
+                    document.write('<script src="' + src + '"><\/script>');
+                }
+                if (window.localStorage) {
+                    httpGet(src, function (txt) {
+                        set(path, txt);
+                        set(path + 'version', version);
+                    });
+                }
+            }
+
+        };
+
+        var loader = function (arr) {
+            var count = arr.length;
+            for (var i = 0; i < count; i++) {
+                _loader(arr[i]);
+            }
+        };
+        window.Loader = loader;
+        window.SET = set;
+        window.GET = get;
+    })();
+</script>

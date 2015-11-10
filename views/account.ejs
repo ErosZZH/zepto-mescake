@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MES-我的账户</title>
+    <% include includes/static_config %>
+    <% include includes/static_loader %>
+    <% include includes/head_script %>
+</head>
+<body>
+<div id="app_main" class="app-main app-nav">
+    <% include includes/header_v2 %>
+    <div class="scroll-area">
+        <div class="content-area">
+            <div class="content">
+                <div class="acc-box">
+                    <div class="acc-item"><p class="acc-p1">手机号码：<span id="phone">0</span></p>
+                        <a href="/changemobile" class="btn status1-btn">修改</a>
+                    </div>
+                    <div class="acc-item"><p class="acc-p1">登录密码：********* </p>
+                        <a href="/changepassword" class="btn status1-btn">修改</a>
+                    </div>
+                    <div class="list-line" style="margin:20px 0;"></div>
+                    <div class="acc-item"><p class="acc-p1">账户余额：<span id="money">0</span>元</p>
+
+                        <p class="hide">余额可以直接抵扣消费<a href="/charge" class="acc-link">礼品卡充值</a></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    M.loading();
+    (function () {
+        $.get('/getUsersInfo?mod=account&action=get_users_info', {}, function (d) {
+            var data = d.info[0];
+            $('#phone').html(data.mobile_phone);
+            $('#money').html(data.user_money);
+            M.loadingEnd();
+        });
+    })();
+</script>
+<% include includes/baidu %>
+</body>
+</html>

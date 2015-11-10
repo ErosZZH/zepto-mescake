@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MES-地址管理</title>
+  <% include includes/static_config %>
+  <% include includes/static_loader %>
+  <% include includes/head_script_v2 %>
+</head>
+<body>
+<style type="text/css">
+body{background: #f6f6f6;}
+.data-item{padding: 10px; border-top:1px solid #eee; border-bottom: 1px solid #eee; margin: 10px 0; background: #fff;}
+.address-detail{padding-right: 30px; position: relative;}
+.address-num{font-weight: bold; margin-left: 10px;}
+
+.wap-order-title-item {
+color: #ff7e00;
+padding: 0;}
+
+/* 购物车css备份 */
+body{background: #f6f6f6;}
+.wap-order-item{padding:0 0 10px 70px; overflow: hidden; margin-bottom: 10px;}
+
+.woi-img{border: 1px solid #ededed; width: 60px; height: 60px; line-height: 60px; text-align: center;  left: 0; top:0;}
+.woi-img img{width: 54px; height: auto; vertical-align: middle;}
+
+.woi-price{color: #333;}
+.del-ico{display: inline-block; width:18px; height:18px; background:url(img/wap-close31.png) 0 0 no-repeat; background-size: 18px 18px; float: right; vertical-align: middle; margin:8px 10px 0 0;}
+.num-func-area{width: 200px; float: left;}
+
+.add-ico-me{color: #333;}
+.add-ico-me.clicked{color: #f00;}
+
+.leave-mes .global-input{padding:10px; box-sizing:border-box; height: 42px; width: 100%;}
+.leave-mes .global-input:focus{box-shadow: inset 0 0 8px #eaeaea;}
+
+.return-area{background: #fff;}
+
+/* 单独存在的一条线 有边距 */
+.line-item{border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px;}
+.pos-r{position: relative;}
+
+.scroll-area{overflow: auto;}
+</style>
+  <div id="app_main" class="app-main app-nav">
+    <div class="return-area"><a class="ra-ico" href="/checkout"></a><span class="ra-con">地址管理</span></div>
+    <div class="scroll-area" style="padding-bottom:80px; padding-top:42px;" id="address_container">
+      <div class="data-item" id="new_address_link">
+        <p class="pos-r" >新增地址<em class="wap-more-ico"></em></p>
+      </div>
+
+    </div>
+  </div>
+<% include includes/baidu %>
+</body>
+<script>
+ Loader(['touch/js/addressmanager.js']);
+</script>
+</html>

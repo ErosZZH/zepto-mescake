@@ -1,0 +1,1529 @@
+
+body,h1,h2,h3,h4,h5,h6,blockquote,p,pre,dl,dd,ol,ul,li,a,span,caption,th,td,form,fieldset,legend,input,button,textarea,address{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+ol,ul{list-style:none}
+li{list-style:none;}
+fieldset,img{border:0}
+address,cite,dfn,em,var{font-style:normal}
+code,kbd,pre,samp{font-family:courier new,courier,monospace}
+input,button,textarea,select{font-size:100%;}
+input,button,select,textarea{outline:none;}
+textarea{resize:none;}
+table{border-collapse:collapse;border-spacing:0;empty-cells:show;font-size:inherit}
+abbr[title]{border-bottom:1px dotted;cursor:help}
+a,a:hover{text-decoration:none}
+a,label, :focus{outline:0 none;}
+a, img{border:0 none;}
+s{font-style:normal; text-decoration:none;}
+body{font:12px/1 "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
+button, input, select, textarea {font-family:"Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
+input::-moz-placeholder, textarea::-moz-placeholder{color:#3b3b3b; font-weight:normal }
+::-webkit-input-placeholder {color:#3b3b3b; font-weight:normal;} 
+input:-ms-input-placeholder{color:#3b3b3b; font-weight:normal;}
+.clearfix:after{display: block; content: "\20"; height: 0; clear: both; overflow: hidden; visibility: hidden;}/*ie8以上*/
+.clearfix{*zoom:1;}/*ie6、7*/
+
+html,body{width:100%; height:100%;}
+html{overflow:hidden;}
+body{overflow:auto;}
+
+
+/* 每个模块的大背景 */
+.layout{ height:100%; width:100%; min-height:702px;}/* 这里的min-height是临时的*/
+/* 各个模块的底部光晕 */
+/*
+.layout:after{position:absolute; bottom:-50%; left:10%; content:''; width:80%; height:50%; height:0%\9; overflow:hidden\9; border-radius:50%; box-shadow:0 -200px 500px rgba(255,255,255,0.2);}
+
+@-moz-document url-prefix(){
+.sms .layout:after{height:0; overflow:hidden; box-shadow:none;}
+}
+  */
+/* 图库背景和菜单配置 */
+body.gallery{background:#4a474d url(https://s1.mi-img.com/img/micloudv2/gallery_content_bg.png) 0 top repeat-x;}
+.gallery .layout{position:relative; }/* z-index:10; */
+/*
+      .gallery .layout:after{box-shadow:0 -200px 500px rgba(191,181,195,0.3); position:fixed; z-index:-1;}
+*/
+/* 找回手机模块的背景和菜单配置 */
+body.phone{background:#51565c url(https://s1.mi-img.com/img/micloudv2/phone-bg.png) 0 0 repeat-x;}
+
+/* 便签模块的背景和菜单配置 */
+body.note{background:#595251 url(https://s1.mi-img.com/img/micloudv2/note-model-bg.png) 0 top repeat-x;}
+
+/* 短信皮肤 */
+body.sms{background:#4b4d58 url(https://s1.mi-img.com/img/micloudv2/sms-bg.png) 0 0 repeat-x;}
+
+
+/* 改版临时滚动条 */
+::-webkit-scrollbar-corner{background-color:transparent;}
+::-webkit-scrollbar-button{width:0;height:0;display:none; }
+::-webkit-scrollbar-thumb{width:7px; background-color:#b4babf; border-radius:7px; }
+::-webkit-scrollbar{width:7px;height:7px;}
+::-webkit-scrollbar-track{width:15px;}
+::-webkit-scrollbar:hover{background-color:transparent;}
+
+/*  默认loading */
+.loading{width:100%; height:100%;
+  -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+  background:url(https://s1.mi-img.com/img/micloudv2/loading2.gif) center center no-repeat;}
+
+
+/* 通知信息 */
+    .inform-container{position:absolute; top:-102px; right:10px; z-index:9990;}
+    .inform-inner{position:relative; box-shadow:0 2px 4px #333; text-align:left; padding:6px 10px 6px 10px; color:#000; background:#ffffbf; border:1px solid #333;}       
+    .inform-close{width:12px; height:12px; cursor:pointer; display:inline-block; position:absolute; top:8px; right:10px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -122px -274px no-repeat; vertical-align:middle;}
+    .inform-span{display:block; line-height:1.5;}
+
+/* 国际化 */
+body[lang^=en] .global-menu-ul li a{width:80px;}
+body[lang^=en] .ll-input-check input{padding:10px 6px;}
+body[lang^=en] .func-menu{min-width:282px;}
+body[lang^=en] .sms-bottom-menu{min-width:auto;}
+body[lang^=en] .iMIge-exif dt{width:7.5em;}
+body[lang^=en] .contact-empty{background:url(https://s1.mi-img.com/img/micloudv2/contactdefault_en.png) center center no-repeat;}
+body[lang^=en] .mes-fav-empty{background:url(https://s1.mi-img.com/img/micloudv2/messavedefault_en.png) center center no-repeat;}
+body[lang^=en] .mes-empty{background:url(https://s1.mi-img.com/img/micloudv2/smsdefault_en.png) center center no-repeat;}
+body[lang^=en] .img-right-empty{background:url(https://s1.mi-img.com/img/micloudv2/imgrightempty_en.png) center center no-repeat;}
+body[lang^=en] .img-empty{background:url(https://s1.mi-img.com/img/micloudv2/imgdefault_en.png) center center no-repeat;}
+body[lang^=en] .find-phone-noopen{background:url(https://s1.mi-img.com/img/micloudv2/phonenoopen_en.png) center center no-repeat;}
+body[lang^=en] .map-empty{background:url(https://s1.mi-img.com/img/micloudv2/mapnouse_en.png) center 38% no-repeat;}
+body[lang^=en] .func-menu2{width:130px;}
+body[lang^=en] .edit-contact dt{width:30%;}
+body[lang^=en] .edit-contact dd{width:70%;}
+body[lang^=en] .hasno-dt dd{width:100%;}
+body[lang^=en] .gl-right .button-font-description{margin-left:-82px;}
+body[lang^=en] .search-edit{padding-left:42px;}
+body[lang^=en] .st-tips{width:42px;}
+
+body[lang^=zh_TW] .contact-empty{background:url(https://s1.mi-img.com/img/micloudv2/contactdefault_tw.png) center center no-repeat;}
+body[lang^=zh_TW] .mes-fav-empty{background:url(https://s1.mi-img.com/img/micloudv2/messavedefault_tw.png) center center no-repeat;}
+body[lang^=zh_TW] .mes-empty{background:url(https://s1.mi-img.com/img/micloudv2/smsdefault_tw.png) center center no-repeat;}
+body[lang^=zh_TW] .img-right-empty{background:url(https://s1.mi-img.com/img/micloudv2/imgrightempty_tw.png) center center no-repeat;}
+body[lang^=zh_TW] .img-empty{background:url(https://s1.mi-img.com/img/micloudv2/imgdefault_tw.png) center center no-repeat;}
+body[lang^=zh_TW] .find-phone-noopen{background:url(https://s1.mi-img.com/img/micloudv2/phonenoopen_tw.png) center center no-repeat;}
+body[lang^=zh_TW] .map-empty{background:url(https://s1.mi-img.com/img/micloudv2/mapnouse_tw.png) center 38% no-repeat;}
+
+
+/* 一些约定俗成的class */
+.hide{display:none;}
+.nowrap{white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.font-bold{font-weight:bold;}
+.tl-c{text-align:center;}
+.pointer{cursor:pointer;}
+.noselect{cursor:default; -webkit-user-select:none;-moz-user-select: none;-khtml-user-select: none;-ms-user-select:none;-o-user-select:none; user-select: none;}/* 不允许选择文本 */
+
+/* @TODO:如何开启云同步的文案 -- 暂时放在这里，等页面出来，需要放到对应的model中 */
+.open-icloud-content{text-align:left; margin-top:-30px;}
+.open-icloud-content .content-title{color:#666; border-bottom:1px solid #dae0e6; margin:0; padding-bottom:10px;}
+.li-style-circle{list-style:disc; margin-left:40px;}
+.open-icloud-content .pm-p{margin:10px 0;} 
+.open-icloud-content .pm-p2 a{text-decoration:underline; color:#7f7f7f;}
+.li-style-circle p{margin:0 0 4px 0;} 
+
+/* milogo */
+.logo-area{width:69px; height:62px; cursor:pointer; position:absolute; top:-90px; left:24px; background:url(https://s1.mi-img.com/img/micloudv2/milogoinner.png) no-repeat;}
+
+/* 账户信息、语言切换 */
+.layout .language-switch{position:relative; padding-bottom:20px; color:#b8babc;}
+.language-switch span{cursor:pointer;}
+.language-switch span:hover{color:#fff;}
+.login-info{min-width:960px; text-align:right; color:#b8babc; height:1px; position:relative; margin:0 auto 0 auto;}
+.login-info-inner{position:absolute; top:-45px; right:0;}
+.username{color:#b8babc; padding-right:10px; margin-right:6px;}
+.logout{color:#b8babc; margin-right:10px;}
+.username:hover,
+.logout:hover{color:#fff;}
+
+/* 下拉区域 */
+.li-corner{width:0; height:0; overflow:hidden; vertical-align:middle; border:5px solid transparent; border-top:5px solid #989898; margin-top:4px; display:inline-block;}
+.login-info .login-menu{width:110px; box-shadow:none; padding:0;}
+.login-info .login-menu li{padding:0 10px;}
+.login-menu li.current{background:url(https://s1.mi-img.com/img/micloudv2/dialoglibg.png) 0 0 repeat-x;}
+.login-menu li a{display:block; text-align:left; color:#7f7f7f; line-height:30px;}
+.login-menu li a:hover{color:#7f7f7f;}
+
+
+
+/* 顶部菜单 */
+.global-menu{margin:0 auto; height:102px; text-align:center;}
+.global-menu-ul{}
+.global-menu-ul li{width:102px; height:72px; padding-top:20px; display:inline-block;}
+.global-menu-ul li.current,
+.global-menu-ul li:hover{background:url(https://s1.mi-img.com/img/micloudv2/contact_nav_hover_bg.png) center center no-repeat;}
+  .global-menu-ul li a{display:block; width:50px; margin:0 auto;}
+  .global-menu-ul li i,
+  .global-menu-ul li span{display:block;}
+  .global-menu-ul li i{width:32px; height:32px; margin:auto; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) 0 0 no-repeat;}
+    .global-menu-ul i.gu-contactlist{background-position:-3px -37px ;}
+    .global-menu-ul i.gu-message{background-position:-41px -38px;}
+    .global-menu-ul i.gu-album{background-position:-78px -37px ;}
+    .global-menu-ul i.gu-notes{background-position:-113px -38px;}
+    .global-menu-ul i.gu-maps{background-position:-149px -38px;}
+    li:hover i.gu-contactlist,
+    .current i.gu-contactlist{background-position:-3px -1px ;}
+    li:hover i.gu-message,
+    .current i.gu-message{background-position:-41px -2px;}
+    li:hover i.gu-album,
+    .current i.gu-album{background-position:-78px -1px ;}
+    li:hover i.gu-notes,
+    .current i.gu-notes{background-position:-113px -2px;}
+    li:hover i.gu-maps,
+    .current i.gu-maps{background-position:-149px -2px;}
+  .global-menu-ul li span{color:#8f9399; font-size:12px; text-align:center; height:20px; line-height:20px;}
+  .global-menu-ul li:hover span,
+  .global-menu-ul li.current span{color:#d5d8dc;}
+
+/* nav 配置 */
+.phone .global-menu-ul li.current,
+.phone .global-menu-ul li:hover{background:url(https://s1.mi-img.com/img/micloudv2/phone_nav_hover_bg.png) center center no-repeat;}
+.note .global-menu-ul li.current,
+.note .global-menu-ul li:hover{background:url(https://s1.mi-img.com/img/micloudv2/note_nav_hover_bg.png) center center no-repeat;}
+.gallery .global-menu-ul li.current,
+.gallery .global-menu-ul li:hover{background:url(https://s1.mi-img.com/img/micloudv2/gallery_nav_hover_bg.png) center center no-repeat;}
+.sms .global-menu-ul li.current,
+.sms .global-menu-ul li:hover{background:url(https://s1.mi-img.com/img/micloudv2/sms_nav_hover_bg.png) center center no-repeat;}
+
+/* 传说中的九宫格 */
+.mdl{padding:6px 0; position:relative; margin:0 auto; min-width:960px; min-height:550px;
+  box-shadow:0 20px 80px #333; border-radius:12px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+  }
+  .mdl-bookshadow{position:absolute; width:100%; height:46px; background:url(https://s1.mi-img.com/img/micloudv2/bookshadow2.png) center 0 no-repeat; left:0; bottom:-75px;}
+  .mdl-topline,
+  .mdl-middleline{position:absolute; width:3px; margin-left:-2px; height:133px; background:url(https://s1.mi-img.com/img/micloudv2/bookline-long.png) no-repeat; top:12%; left:50%;}
+  .mdl-topline{top:74%;}
+  .mdl-t{background:url(https://s1.mi-img.com/img/micloudv2/corner-blue.png) 0 0 no-repeat; margin-top:-8px; width:100%; height:24px;}
+  .mdl-t-r{background:url(https://s1.mi-img.com/img/micloudv2/corner-blue.png) right 0 no-repeat; margin-left:28px; height:24px;}
+  .mdl-t-m{margin-right:28px; height:24px; overflow:hidden;}
+  .mdl-t-m-l, .mdl-t-m-r{width:50%; float:left; background:url(https://s1.mi-img.com/img/micloudv2/top-blue.png) right 0 no-repeat}
+  .mdl-t-m-r{background-position:left -34px;}
+  .mdl-t-m-l-c,
+    .mdl-t-m-r-c{margin-right:110px; background:url(https://s1.mi-img.com/img/micloudv2/top-repeat-blue.png) 0 0 repeat-x; height:24px; }
+  .mdl-t-m-r-c{margin:0 0 0 110px;}
+  .mdl-b{background:url(https://s1.mi-img.com/img/micloudv2/corner-blue.png) 0 -25px no-repeat; margin-bottom:-24px; width:100%; height:24px;}
+  .mdl-b-r{background:url(https://s1.mi-img.com/img/micloudv2/corner-blue.png) right -25px no-repeat; margin-left:28px; height:24px;}
+  .mdl-b-m{margin-right:28px; height:24px; overflow:hidden;}
+  .mdl-b-m-l, .mdl-b-m-r{float:left; width:50%; background:url(https://s1.mi-img.com/img/micloudv2/top-blue.png) right -68px no-repeat;}
+  .mdl-b-m-r{background-position:left -102px;}
+  .mdl-b-m-l-c,
+    .mdl-b-m-r-c{margin-right:110px; background:url(https://s1.mi-img.com/img/micloudv2/top-repeat-blue.png) 0 -25px repeat-x; height:24px; }
+  .mdl-b-m-r-c{margin:0 0 0 110px;}
+  .mdl-m{height:100%; background:url(https://s1.mi-img.com/img/micloudv2/left-blue.png) 0 0 repeat-y; min-height:420px;}
+  .mdl-m-r{margin-left:24px; height:100%; min-height:420px; background:url(https://s1.mi-img.com/img/micloudv2/left-blue.png) right 0 repeat-y;}
+  .mdl-m-m{margin-right:24px; height:100%; min-height:420px; background:#fff;}
+  .mdl-m-m-l,
+  .mdl-m-m-r{width:50%; float:left; height:100%; min-height:420px; background:#fff url(https://s1.mi-img.com/img/micloudv2/content-left.png) right 0 repeat-y;}
+  .mdl-m-m-r{background:#fff url(https://s1.mi-img.com/img/micloudv2/content-right.png) left 0 repeat-y;}
+/* iframe容器的限定 */
+  .frame-container{margin: 0 auto;}
+  .gallery .frame-container,
+  .note .frame-container,
+  .phone .frame-container{min-width:1000px; min-height:600px;}
+
+/* 框框的四个圆角 -- 联系人、短信 */
+.left-corner,
+.left-bottom-corner,
+.right-corner,
+.right-bottom-corner{position:absolute; display:none; width:4px; height:4px; z-index:10;}
+.left-corner{left:-1px; top:-1px; background:url(https://s1.mi-img.com/img/micloudv2/left-radius.png) no-repeat;}
+.right-corner{right:-1px; top:-1px; background:url(https://s1.mi-img.com/img/micloudv2/right-radius.png) no-repeat;}
+.left-bottom-corner{bottom:-1px; left:-1px; background:url(https://s1.mi-img.com/img/micloudv2/left-bottom-radius.png) no-repeat;}
+.right-bottom-corner{bottom:-1px; right:-1px; background:url(https://s1.mi-img.com/img/micloudv2/right-bottom-radius.png) no-repeat;}
+
+/* 模拟下拉框样式
+ * 在恢复联系人的下拉时，被重置了，留着备用
+*/
+.select-frame{border:1px solid #cdd3d6; background:#fefefe url(https://s1.mi-img.com/img/micloudv2/addmorebg2.png) 0 0 repeat-x; border-radius:3px; padding:0 40px 0 10px; height:39px;
+-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.select-frame:hover{background-position: 0 -41px;}
+.ss-innertext{display:block; text-indent:6px; border:0 none; background:none; color:#778391; margin:12px 0; height:15px; line-height:15px; float:left; width:100%;
+-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.select-corner{display:block; float:right; margin:0 -40px 0 0; cursor:pointer; width:39px; height:37px; border-left:1px solid #e7e9eb;}
+.select-corner i{display:block; width:8px; height:6px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -140px -301px no-repeat; margin:16px auto 0 auto;}
+.select-corner-up i{background-position:-155px -301px;}
+
+
+/* 新版弹框 */
+.gray_box{background:#000; opacity:0.7; filter:alpha(opacity=70); position:absolute; top:0; left:0; *zoom:1; width:100%; height:100%; min-height:740px;}
+.dialog{ position:absolute; top:0; border-radius:8px; background:#fcfcfc url(https://s1.mi-img.com/img/micloudv2/dialog-head-bg.png) repeat-x; box-shadow:0 0 60px rgba(0,0,0,0.6), 0 0 1px rgba(255,255,255,0.8) inset;}
+.dialog-box{display:inline-block; *display:inline; *zoom:1; width:100%; text-align:left;}
+
+.m-p-head{min-height:6px; border-bottom: 2px solid #e8e8e8; height:48px; line-height:48px; }
+.m-p-head-ct{padding:0 46px 0 24px; color:#000; font-weight:bold; text-align:left; font-size:14px;}
+.close_btn{ width:16px; height:16px; display:block; position:absolute; top:16px; right:18px; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -309px -112px no-repeat; }
+.dialog_body{}
+.dialog .m-p-frame{background:#f6f6f6;}
+.dialog-tips{font-size:14px; font-weight:bold; padding:40px 20px; min-width:260px; word-wrap:break-word; word-wrap:wrap; text-align:center; line-height:1.5;}
+.dialog-input-area{padding:24px;}
+.dialog-input-area .icobtn-del{float:left;}
+.dialog-input-area .dialog-input{float:left;}
+.dialog-input{height:38px; border:1px solid #cdd2d5; padding:8px 10px; font-size:14px; width:360px; margin-bottom:10px;
+  -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border-radius:4px;}
+
+/* 弹框 contact_content */
+.content-title{position:absolute; top:14px; left:24px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; width:230px; font-size:14px; height:22px; line-height:22px; margin-bottom:16px; font-weight:bold;}
+.content-title2{height:54px; border-bottom:1px solid #e8ebec; color:#666; font-size:14px; text-align:center; line-height:54px;}
+.dialog .m-p-foot{background:#f6f6f6; padding: 10px; box-shadow:0 1px 0 #fff; border-top:1px solid #e8e8e8; border-bottom-left-radius:6px; border-bottom-right-radius:6px;}
+.dialog .button-area{margin:0;}
+/*
+.dialog .button{border:1px solid #aeb6bc;}
+.dialog .default{border:1px solid #489dd4;}
+.dialog .disabled{border:1px solid #dee2e4;}
+*/
+.dialog .button-red{border:1px solid #d34d48;}
+
+/* 弹框控制自由滚动条 */
+.m-p-sh.m-p{padding:56px 6px 64px 6px;  -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}
+.m-p-sh.m-p .m-p-head{margin-top:-50px;}
+.m-p-sh.m-p .find-phone-content{height:100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; overflow-x:hidden;}  
+.m-p-sh.m-p-nt{padding:6px 6px 64px 6px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}      
+.m-p-sh .m-p-frame{height:100%;}      
+.m-p-sh.m-p-nt .find-phone-content{height:100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; overflow-x:hidden;}
+/* 退出弹框 */
+.logout-dialog .m-p-frame{border-radius:0 0 8px 8px;}
+
+
+/* 联系人picker和相册picker -- 继承自dialog，放到dialog文件即可 */
+/*
+gallery-list picker-list
+*/
+.picker-list li{background:#eee; border-bottom: 1px solid #e2e2e2;}
+.picker-list li:first-child{border-top: 0 none;}
+.picker-list .checkbox{left:14px;}
+.picker-list li:hover{background:#fff;}
+
+/* 弹框适配 */
+/* 新建短信选择联系人弹框 -- 切换联系人 */
+.pker-tabs{height:48px; line-height:48px;
+  box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+  .pker-tabs li{display:none; width:50%; float:left;}
+  .pker-tabs a{ display:block; padding-left:24px; border-left:1px solid #dcdcdc; text-align:left; color:#000; height:48px; line-height:48px; font-size:14px; }
+  .pker-tabs li:first-child{display:block;}
+  .pker-tabs li:first-child a{border:0 none;}
+  .pker-search{padding:15px 15px 10px 15px; border-bottom:1px solid #e2e2e2; background:#f6f6f6;}
+  .pker-contents{height:360px;overflow-y:auto;overflow-x:hidden; background:#eee; xxwidth:360px;}
+  .pker-data{position:relative;width:720px;overflow:hidden;zoom:1;}
+  .picker-list,.picker-group-list{width:360px;}
+  .picker-list{float:left;}
+  .picker-list .contact-nickname{margin:2px 0; color:#000; font-weight:bold;}
+  .picker-group-list{float:right;}
+  .picker-group-list .contactlist-container{ padding-right:16px; }
+  .picker-group-list .contact-nickname{margin:12px 0 0 0;}
+  .pker-sub .picker-list li{background:#f6f6f6; border-top:1px solid #e1e6e9;}
+  .pker-sub .picker-list li:hover,
+    .pker-sub .picker-list li.selected{ background:#fff; }
+    .pker-sub .picker-list li:first-child {border-top:0 none;} 
+    .pker-sub .contact-nickname{margin:4px 0; color:#000; font-weight:bold;}
+    .little-corner-down{width:16px; height:16px; display:block; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -136px -296px no-repeat; float:right; margin-top:-12px;}
+    /* 联系人、短信内容列表 */
+    .picker-empty{text-align:center; margin-top:60px;}
+    .picker-list .contactlist-container{position:relative; padding:3px 50px 4px 20px; height:40px; overflow:hidden;}
+    li.contactlist-index{padding:0 0 0 12px; height:32px; background:#fff url(https://s1.mi-img.com/img/micloudv2/listindex.png) right 0 repeat-y;}
+    li.contactlist-index:hover{background:#fff url(https://s1.mi-img.com/img/micloudv2/listindex.png) right 0 repeat-y;}
+    li.contactlist-index p{font-weight:bold; font-size:14px; line-height:32px;}
+    .pker-data .checkbox,
+      .pker-data .checkbox:hover,
+        .pker-data .checkbox:active{ left:auto; right: 18px; background-position:-175px -110px; }
+        .pker-data .checkbox.checked,
+          .pker-data .checkbox.checked:hover,
+          .pker-data .checkbox.clicked-checkbox,
+          .pker-data .checkbox.clicked-checkbox:hover,
+            .pker-data .checkbox.checked:active{ background-position:-148px -110px; }
+
+/* 弹框蒙层 -- 列表形式需要首尾有蒙层阴影 */
+.gray-layer-t{ position:absolute; top:-1px; left:0; width:100%; height:6px; background:url(https://s1.mi-img.com/img/micloudv2/gray-layer-top.png) repeat-x; }
+.gray-layer-b{ position:absolute; bottom:0; left:0; width:100%; height:6px; background:url(https://s1.mi-img.com/img/micloudv2/gray-layer-bottom.png) repeat-x; }
+
+/* 查看大图标志 */
+/* iMIge */
+div.iMIge-mask{ /* special mask div for iMIge */
+      opacity:.8;
+      filter:alpha(opacity=80);
+      background-color:rgba(0,0,0,.8);
+      filter:alpha(opacity=80) progid:DXImageTransform.Microsoft.gradient(startColorstr=#E54C4C4C,endColorstr=#E54C4C4C)\9; /* use filter on ie */
+}
+:root .mask{filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);} /* clear filter on ie9 */
+.iMIge{
+          position:absolute;z-index:800;left:0;top:0;width:100%;height:100%;font:12px/1.5 a;
+          -webkit-user-select:none;
+          -moz-user-select:none;
+          -ms-user-select:none;
+          -o-user-select:none;
+}
+.iMIge a{color:#ccc;text-decoration:none;}
+.iMIge-nav a s,
+.iMIge-opt li a{background-image:url(https://s1.mi-img.com/img/micloudv2/iMIge-icon-3.png);background-repeat:no-repeat;}
+
+.iMIge-hd{height:30px;}
+.iMIge-close{position:fixed;z-index:850;right:0;top:0;width:56px;height:56px;}
+.iMIge-close a{
+    display:block;width:56px;height:56px;color:#fff;font:700 28px/38px tahoma;text-indent:24px;
+    border-radius:0 0 0 56px;
+    background-color:rgba(77,77,77,.4);
+    background:url(https://s1.mi-img.com/img/micloudv2/iMIge-icon-3.png) 0 -229px no-repeat 0 -90px\9; /* use background-image on ie for border-radius */
+}
+.iMIge-close a:hover {
+color:#ffab00;
+background-color:#4d4d4d;
+background-color:transparent\9;
+background-position:0 -289px\9; /* use background-image on ie for border-radius */
+  }
+.iMIge-bd{position:relative;z-index:810;cursor:pointer;}
+.iMIge-image{margin:-1px 85px 0;padding-top:1px;height:100%;}
+.iMIge-image a{
+    display:block;position:relative;z-index:811;margin:0 auto;height:100%;
+    box-shadow: 1px  1px 16px rgba(0,0,0,.5);
+    /*  
+    -4px -4px 12px rgba(0,0,0,.5),
+    4px -4px 12px rgba(0,0,0,.5),
+    -4px  4px 12px rgba(0,0,0,.5);
+     */
+}
+  .iMIge-image span,
+  .iMIge-image img{display:block;width:100%;height:100%;}
+  .iMIge-image span{position:absolute;}
+  .iMIge-image img{image-rendering:optimizeQuality;-ms-interpolation-mode:bicubic;}
+  .iMIge-image-bg{z-index:812;background:#fff url(//s1.mi-img.com/img/micloudv2/loading2.gif) no-repeat 50% 50%;}
+  .iMIge-image-fg{z-index:813;top:-0.5px;}
+  .iMIge-nav a{position:absolute;z-index:820;top:0;width:85px;height:100%;}
+  /*.iMIge-nav a:hover {background-color:rgba(33,33,33,.5);}*/
+  .iMIge-nav a s{position:absolute;z-index:821;top:50%;margin-top:-24px;display:block;width:30px;height:45px;*cursor:pointer;}
+  .iMIge-prev{left:0;}
+  .iMIge-next{right:0;}
+  .iMIge-prev s{margin-left:15px;background-position:0 0;} 
+  .iMIge-next s{margin-left:40px;background-position:0 -112px;}
+  .iMIge-prev.hover s,
+  .iMIge-prev:hover s{background-position:0 -56px;} 
+  .iMIge-next.hover s,
+  .iMIge-next:hover s{background-position:0 -168px;}
+  /* the exif's height is fixed */
+  .iMIge-exif{
+    position:absolute;z-index:830;top:50%;right:50px;margin-top:-130px;width:200px;cursor:text;
+    -webkit-user-select:text;
+    -moz-user-select:text;
+    -ms-user-select:text;
+    -o-user-select:text;
+}
+.iMIge-exif-base,
+.iMIge-exif-size{padding-bottom:1em;}
+.iMIge-exif-base-fileName{word-wrap:break-word;}
+.iMIge-exif dt{float:left;width:5.5em;color:#ccc;}
+.iMIge-exif dd{color:#fff;overflow:hidden;*zoom:1;}
+.iMIge-ft{height:70px;}
+.iMIge-opt{padding-top:24px;text-align:center;}
+.iMIge-opt li{display:inline-block;*display:inline;*zoom:1;padding:0 10px;line-height:20px;}
+.iMIge-opt li a{display:block;padding-left:26px;}
+.iMIge-down a{background-position:-38px -60px;}
+.iMIge-down a:hover{color:#fff;background-position:-38px -88px;}
+.iMIge-info a{background-position:-38px -116px;}
+.iMIge-info a:hover{color:#fff;background-position:-38px -144px;}
+.iMIge-info a.iMIge-active{background-position:-38px -144px;}
+.iMIge-del a{background-position:-38px -172px;}
+.iMIge-del a:hover{color:#fff;background-position:-38px -200px;}
+.iMIge-extra{position:absolute;width:1px;height:1px;overflow:hidden;}
+.iMIge-ShortcutTips{line-height:1.5; text-align:left;}
+.iMIge-ShortcutTips ul{padding-top:1em;}
+.iMIge-ShortcutTips em{float:left;width:6em;font-weight:700;font-family:verdana;}
+.iMIge-ShortcutTips span{overflow:hidden;}
+
+/* 改版涉及到的css */
+.iMIge-image-container{margin:0 auto; position:relative; box-shadow:1px 1px 16px rgba(0,0,0,.5);}
+.iMIge-close-new{position:absolute; right:-56px; background:#49494f; box-shadow:none; border-radius:0 10px 10px 0;} 
+.iMIge-close-new a{background:none; max-width:56px; max-height:56px; box-shadow:none; border-radius:0; text-indent:16px; padding-top:6px;}
+
+/* 加到相册弹框　*/
+/* @TODO:前者的新建相册会随内容变动 后者不会*/
+/*
+.gallery-list{ position:relative; margin:0 auto; width:auto; min-height:242px; float:none; overflow:hidden;}
+.gallery-list ul{max-height:366px; overflow:auto; }
+*/
+.gallery-list{ position:relative; margin:0 auto; width:auto; float:none; overflow:hidden;}
+.gallery-list ul{height:364px; overflow:auto; }
+.gallery-list li{ padding:10px 20px; background:#f6f6f6; }
+.gallery-list li.current{ background: #e9e9e9; }
+.gallery-list .contactlist-container{ overflow:hidden; padding:0; height:auto;
+  box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;
+}
+.gallery-list .contact-nickname{margin:12px 0; height:16px; line-height:1.2; white-space:nowrap; text-overflow:ellipsis; cursor:default; color:#000; font-weight:bold; overflow:hidden;}
+.gallery-list li{border-bottom: 1px solid #e2e6e9; }/* @TODO：在修改相册内容尾随变动的时候 这一行要删除*/
+.gallery-list .contactlist-avatar{background:#f6f7f8 url(https://s1.mi-img.com/img/micloudv2/more-iconsnew1.png) 0 1px no-repeat;}
+.gallery-list .contactlist-avatar img{min-width:38px; min-height:38px;}
+
+/*分享相册弹框*/
+.share-album{ border-bottom:1px solid #dcdcdc; height:36px; line-height:36px; }
+.share-album span{ display:inline-block; color:#7b7b7b; }
+.share-album .share-album-num{ padding:0 4px 0 24px; }
+.share-album-tip{ float:right; padding:0 24px 0 4px; }
+.share-list li{position:relative; border-top:1px solid #f3f3f3; border-bottom:1px solid #e2e2e2; background:#eee;}
+.share-list li:first-child{ border-top:0 none;}
+.share-list .move-gallery-item{padding: 10px 24px;}
+.share-list .contactlist-container{ padding-right:50px; }
+.share-list .contact-nickname{ margin:0; }
+.share-list .share-album-nick{ position:absolute; top:18px; right:24px; line-height:22px; color:#7b7b7b; }
+.share-list li .share-album-nick.del-share-member{ top:3px; right:0; width:10px; height:10px; text-indent:-999em; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -46px -174px no-repeat; }
+.share-list li:hover .share-album-nick.del-share-member{ background-position: -67px -174px; }
+.share-list .gray-layer-t{ top: 37px; }
+.invite-member{ position:absolute; top:-100px; left:-34px; padding: 14px 12px; border:1px solid #ced3d6; border-radius:4px; box-shadow:0 6px 20px rgba(0,0,0,.2); background:#fff; }
+.invite-member p{ color:#7f7f7f; line-height:22px; text-align:center; }
+.share-list .dialog-input{ width:300px; }
+.share-list .bottom{ left:30%; }
+.li-tip-empty{ margin-top:50%; background:none; line-height:22px; text-align:center; font-weight:bold; color:#7b7b7b; }
+.li-tip-empty .empty-title{ color:#000; }
+.invite-member-dialog .li-tip-empty{ margin-top:17%; }
+.share-list.invite-member-dialog .li-tip-empty{ margin-top:40%; }
+.invite-member-dialog .dialog-input{ margin-bottom:35px; width:230px; text-align:center; }
+.invite-member-dialog .li-tip-empty .empty-title{ margin-bottom:42px; }
+.invite-member-dialog .li-tip-empty,
+  .invite-member-dialog .li-tip-empty:hover,
+  .share-list .li-tip-empty,
+  .share-list .li-tip-empty:hover{ background:transparent; border:0 none; }
+.share-member-list{ float:left; width:50%; }
+.share-member-list .gray-layer-t{ top:0; }
+.invite-member-list{ width:50%; }
+.invite-member-list .dialog-input{ }
+
+/* picker里面的新建相册 */
+.dia-add-album{ background:#f6f6f6; width:100%; }
+/* @TODO:这一行在新建相册尾随内容变动的时候要删除
+.dia-add-album .contactlist-container{ border-bottom:1px solid #e9e9e9; }
+*/
+.dia-add-album .contactlist-container{ border-top:1px solid #e9e9e9; }
+.dia-add-album .contactlist-avatar{display:inline-block; height:20px; width:20px; vertical-align:middle; text-indent:-990px; overflow:hidden; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) 0 0 no-repeat; border:0 none;}
+.dia-add-album .contactlist-avatar{ background-position: -121px -110px; margin:20px 8px 20px 20px; }
+.dia-add-album .contact-nickname{ padding:20px 20px 20px 0; margin:0; color:#5d5d5d; font-size:14px; font-weight:bold; height:20px; line-height:20px; }
+.dia-add-album.current:hover .contactlist-avatar{background-position:-48px 0;}
+.gallery-list .dia-add-album.current,
+.gallery-list .dia-add-album.current:hover{background:#fff;}
+.dia-add-album-area{padding:10px 72px 12px 20px;}
+.dia-add-album .dialog-input{margin-bottom:0; border:1px solid #d2d2d2; border-radius:8px; padding:8px; width:100%; height:38px; vertical-align:middle; background:#fff;
+  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+#create_album_content .contactlist-avatar{ display:none; }/* @TODO：这个弹框的contactlist-avatar结构需要删除，再删除对应的css*/
+
+.dia-add-album-area .create-album-confirm,
+  .dia-add-album-area .create-album-cancel{display:inline-block; position:absolute; top:19px; text-indent:-999em; height:24px; width:26px; vertical-align:middle; text-indent:-990px; overflow:hidden; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) 0 0 no-repeat;}
+  .dia-add-album-area .create-album-confirm{background-position:-60px -110px; right:42px; border:0 none; box-shadow:none; }
+  .dia-add-album-area .create-album-confirm:hover{background-position:-35px -229px; right:42px; border:0 none; box-shadow:none; }
+  .dia-add-album-area .create-album-confirm:active{background-position:-70px -229px; right:42px; border:0 none; box-shadow:none; }
+  .dia-add-album-area .create-album-cancel{background-position:-92px -110px; right:12px; border:0 none; box-shadow:none; }
+  .dia-add-album-area .create-album-cancel:hover{background-position:-105px -229px; right:12px; border:0 none; box-shadow:none; }
+  .dia-add-album-area .create-album-cancel:active{background-position:-134px -229px; right:12px; border:0 none; box-shadow:none; }
+  .dia-add-album-area .disabled:hover{background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) 0 0 no-repeat;}
+  .dia-add-album-area .disabled,
+    .dia-add-album-area .disabled:hover,
+    .dia-add-album-area .disabled:active{background-position:-160px -229px; right:42px; border:0 none; box-shadow:none; }
+.dia-add-album-area input::-moz-placeholder,
+  .dia-add-album-area textarea::-moz-placeholder{font-weight:normal; color:#b0b7bd;}
+.dia-add-album-area input::-webkit-input-placeholder,
+  .dia-add-album-area textarea::-webkit-input-placeholder{font-weight:normal; color:#b0b7bd;}
+
+/* 切换手机弹框 */
+.select-device li{position:relative; height:64px; border-top:1px solid #e2e2e2;}
+.select-device li:first-child{border-top:0 none;}
+.select-device li.current,
+.select-device li:hover{background:#fff;}
+.sd-device{padding:16px 0 0 52px;}
+.sd-name{margin-bottom:6px; font-weight:bold;}
+.select-device .checkbox,
+  .select-device .checkbox:hover,
+  .select-device .checkbox:active{ right:auto; left:18px; top:20px; background-position: -229px -110px; }
+.select-device .checkbox.checked,
+  .select-device .checkbox.checked:hover,
+  .select-device .checkbox.checked:active{ background-position: -202px -110px; }
+  .select-device .radiobox{display:block; width:20px; height:20px; position:absolute; bottom:23px; left:20px; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -231px -110px no-repeat;}
+  .select-device .radiobox.clicked-radiobox{background-position:-204px -110px;}
+
+/* 手机模块 */
+/* 找回手机弹框 */
+.find-phone-content{text-align:left; padding:24px;}
+.dialog-input{height:38px; border:1px solid #cdd2d5; padding:8px 10px; font-size:14px; width:360px; margin-bottom:10px; 
+  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.pm-p{line-height:1.5; color:#333; margin-bottom:10px;}
+.pm-p2{line-height:1.5; color:#7f7f7f; margin:0 0 4px 24px;} 
+.pm-p-little{font-size:12px; line-height:18px; color:#959595;}
+.pm-p-tip em{ display:inline-block; margin:0 4px 0 14px; width:18px; height:18px; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -359px -112px no-repeat; vertical-align:middle; }
+#trynoise_button{margin:0 auto; padding:10px 0 20px; width:100px; display:block;}
+#trynoise_button em{display:inline-block; width:14px; height:14px; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -179px -174px no-repeat; vertical-align:middle;}
+#trynoise_button em.stopnoise{background-position:-200px -174px;}
+#trynoise_button a{margin-left:0;}
+.del-div{padding:2px 0 30px 60px; background:url(https://s1.mi-img.com/img/micloud/pho_att.png) no-repeat;}
+.del-div p{margin-bottom:4px;}
+.tooltips{position:relative; vertical-align:2px; display:inline-block;}
+.tooltips:hover .bubble{display:inline-block;}
+.tooltips .bubble{position:absolute; left:16px; top:-24px; z-index:10; margin-left:10px; display:none; padding-left:10px;}
+.tooltips .doubt{width:16px; height:16px; display:inline-block; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -138px -452px no-repeat;
+  vertical-align:middle; margin-left:10px; cursor:pointer;}
+.tooltips .bubble-content{line-height:1.5; font-size:12px; font-weight:normal; width:220px; color:#999; padding:6px 10px; border:1px solid #d8d8d8; display:inline-block;border-radius:5px; background:#f4f4f4; -moz-box-shadow:0 3px 10px rgba(0,0,0,.1); -webkit-box-shadow:0 3px 10px rgba(0,0,0,.1); box-shadow:0 3px 10px rgba(0,0,0,.1);}
+.tooltips .bubble-corner{display:inline-block; width:12px; height:11px; background:url(https://s1.mi-img.com/img/passport/icos-new.png) 0 0 no-repeat; overflow:hidden; top:16px; left:-1px; position:absolute; z-index:11;}    
+.tb-left .bubble{left:auto; right:26px; margin-left:0;}
+.tb-left .bubble-corner{background-position:0 -12px; left:auto; right:-11px;}
+.tb-top .bubble{top:-76px; margin-left:-14px;}    
+.tb-top .bubble-corner{background-position:0 -24px; width:11px; top:67px; left:26px;}    
+.tb-top-left .bubble{margin-left:0; top:-76px; left:auto; right:0;}    
+.tb-top-left .bubble-corner{background-position:0 -37px; width:11px; top:auto; left:auto; right:16px; bottom:-10px;}    
+.tb-bottom .bubble{top:auto; top:16px; margin-left:0; left:-10px;}
+
+/* 怎样开启找回手机提示细节修改 后续统一后会删除*/
+.dialog-tips .find-phone-content{padding:0;}
+.dialog-tips .pm-p{font-size:12px;}
+.dialog-tips .pm-p2{font-weight:normal; font-size:12px;}
+
+/*  手机日志弹框 */
+.find-phone-note{padding:10px 10px 10px 20px; height:100%; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.find-phone-note ul{height:100%; padding-right:10px; overflow:auto; max-height:360px;}
+.find-phone-note li{border-top:1px solid #e8ebec; padding:14px;}
+.find-phone-note li:first-child{border-top:0 none;}
+.find-phone-note p{margin-bottom:0;}
+.find-phone-note .pm-p{font-weight:bold;}
+
+/* 全局进度条 */
+.progress-bar{padding:40px; width:340px;}
+.progress-bar p{text-align:right; color:#000; margin-bottom:10px;}
+.pb-box{height:18px; border:1px solid #b1b1b1; background:#d8d8d8; box-shadow:inset 0 0 8px #c9c9c9; border-radius:4px;}
+.pb-bar{height:18px; border:1px solid #2991e9; background:#42a6f5 url(https://s1.mi-img.com/img/micloudv2/progress-bar.png) repeat-x; margin:-1px 0 0 -1px; border-radius:4px;}
+
+/* 带有不再提醒的dialog */
+.dialog-contact-checkbox{ padding:40px 20px; }
+.dialog-contact-checkbox .dialog-tips{ padding:0; text-align:left; }
+.dialog-contact-checkbox .pm-p-checkbox{ display:block; margin-top:4px; color:#313131; }
+.dialog-contact-checkbox .pm-p-checkbox:hover{ color:#959595; }
+.dialog-contact-checkbox .pm-p-checkbox input{ margin-right:4px; }
+
+
+/* 单选框 */
+/* 这里的current和checked是最终的统一，之前的命名可以在修改完后删掉 */
+/* @TODO:已经修改过了，需要替换 */
+/*
+.checkbox,
+.radiobox{position:absolute; cursor:default; top:50%; left:0; display:block; margin-left:-8px; margin-top:-8px;}
+.checkbox em,
+.radiobox em{display:block; width:16px; height:16px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -99px -158px no-repeat;}
+.switch-group em.menu-corner{display:none;}
+.checkbox:hover em{background-position:-99px -184px;}
+.clicked-checkbox em{background-position:-99px -210px;}
+.clicked-checkbox:hover em{background-position:-99px -236px;}
+.checkbox.checked em{background-position:-99px -210px;}
+.checkbox.checked:hover em{background-position:-99px -236px;}
+.current-checkbox em{background-position:-99px -262px;}
+.current-checkbox:hover em{background-position:-99px -262px;}
+.checkbox.current em{background-position:-99px -262px;}
+.checkbox.current:hover em{background-position:-99px -262px;}
+.radiobox em{background-position:-139px -81px;}
+.radiobox:hover em{background-position:-139px -107px;}
+.clicked-radiobox em{background-position:-139px -133px;}
+.clicked-radiobox:hover em{background-position:-139px -159px;}
+*/
+
+/* checkbox 样式*/
+.checkbox,
+  .checkbox:hover,
+  .checkbox:active,
+  .checkbox.checked{ position: absolute; top: 14px; right: 8px; z-index:3; display: block; width: 28px; height: 28px; background: url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) 1px -79px no-repeat; }
+.checkbox:hover{ background-position: -27px -79px; }
+.checkbox:active{ background-position: -58px -79px; }
+.checkbox.checked{ background-position: -89px -79px; }
+.checkbox.checked:hover{ background-position: -120px -79px; }
+.checkbox.checked:active{ background-position: -151px -79px; }
+/* @TODO：兼容样式 -- 请修改成checked */
+.checkbox.clicked-checkbox{ background-position: -89px -79px; }
+.checkbox.clicked-checkbox:hover{ background-position: -120px -79px; }
+.checkbox.clicked-checkbox:active{ background-position: -151px -79px; }
+
+/* radio 订制 -- 通过父级来限定
+ * 示例：将position标出来，只要修改限定即可用
+.contact-list .checkbox{ background-position: -186px -79px; }
+.contact-list .checkbox:hover{ background-position: -217px -79px; }
+.contact-list .checkbox:active{ background-position: -248px -79px; }
+.contact-list .checkbox.checked{ background-position: -279px -79px; }
+.contact-list .checkbox.checked:hover{ background-position: -310px -79px; }
+.contact-list .checkbox.checked:active{ background-position: -342px -79px; }
+ * */
+
+/* 各种点击后的弹框菜单栏 */
+.dialog-menu{position:relative; background:#fff; padding:10px 0; height:auto; box-shadow:0 2px 10px #ddd; border-radius:3px; border:1px solid #c6cdd1;
+  -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
+.dialog-menu ul{overflow:auto; overflow-x:hidden; height:100%; max-height:150px;}
+.dialog-menu li{height:30px; padding:0 28px 0 38px; overflow:hidden; position:relative;
+  -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
+.dialog-menu li:hover{background:url(https://s1.mi-img.com/img/micloudv2/dialoglibg.png) 0 0 repeat-x;}
+.dialog-menu li:hover .menu-edit{display:block;}
+.dialog-menu li .li-font{width:100%; cursor:default; color:#7f7f7f; display:block; height:30px; line-height:30px;
+white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+
+/* 其他配置 */
+.menu-edit{position:absolute; top:7px; right:6px; display:none; width:16px; height:16px; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite9.png) -192px -231px no-repeat;}
+.menu-edit:hover{ background-position:-218px -231px;}
+.menu-corner{display:block; width:12px; height:6px; position:absolute; bottom:-6px; left:50%; margin-left:-6px; background:url(https://s1.mi-img.com/img/micloudv2/menu.png) no-repeat;}
+.bottom{left:50%; margin-left:-6px;}
+
+/*  添加更多弹出的弹框配置 */
+.menu {padding:0}
+.menu li{padding:0 10px;}
+
+/* @TODO:需要修改结构 需求变了 */
+/* 按钮区域以及其配置区域 */
+.button-area,
+.icobtn-area{margin:15px 16px 20px 14px;}
+.fl-l{float:left;}
+.fl-r{float:right;}
+.button-area{ position:relative; text-align:center;}
+.text-align-l{text-align:left;}
+.text-align-l :first-child{margin-left:0;}
+.text-align-r{text-align:right;}
+.text-align-r :first-child{margin-left:0;}
+.text-align-aside{ text-align:right; }
+.text-align-aside :first-child{float:left; margin-left:0;}
+.button .btn-ct{display:inline-block; padding:0 20px;}
+.button-font-description{vertical-align:middle; margin-left:10px; color:#999; font-size:12px; line-height:38px; display:inline-block; }/* 文字与按钮混排时的文字介绍 */ 
+.another-color{color:#000;}
+.button-font-description a:first-child{float:none; color:#000;}
+.button{cursor:default; vertical-align:middle; display:inline-block; height:37px; line-height:37px; color:#6f6f6f; text-align:center; font-size:12px; margin-left:10px; background:url(https://s1.mi-img.com/img/micloudv2/input-bg2.png) 0 -94px repeat-x; overflow:hidden; border-radius:6px; border:1px solid #cfcfcf;
+  -webkit-box-sizing:border-box; box-sizing:border-box; -moz-box-sizing:border-box;}
+  .button:hover{box-shadow:0 3px 6px rgba(204,204,204,0.5);}
+  .button:active{background-position:0 -141px; border:1px solid #a8a8a8; box-shadow:none; color:#585858;}
+.link-button,
+  .link-button:active,
+  .link-button:hover{padding:0; background:none; border:0 none; box-shadow:none;}
+.link-button .btn-ct{text-decoration:underline; padding:0;}
+.default{background-position:0 0; color:#fff; border:1px solid #2991e9;}
+  .default:hover{box-shadow:0 3px 10px rgba(0,0,0,0.2);}
+  .default:active{background-position:0 -47px; border:1px solid #0f61a7; box-shadow:none; color:#d0e2f8;}
+.disabled{background:#f3f3f3; border:1px solid #cdcdcd; color:#b0b0b0;}
+  .disabled:hover{background:#f3f3f3; box-shadow:none;}
+  .disabled:active{background:#f3f3f3; border:1px solid #cdcdcd; color:#b0b0b0;}
+.button-red{background-position:0 -334px; background-color:#f16649; color:#fff; border:1px solid #d34d48;}
+  .button-red:hover{background-position:0 -334px; color:#fff; border:1px solid #d34d48;}
+  .button-red:active{box-shadow:none; color:#f4e1e0;}
+
+/* 按钮icon */
+.icobtn-edit,
+.icobtn-voice,
+.icobtn-locked,
+.icobtn-clear,
+.icobtn-more{vertical-align:middle; margin-left:10px; display:inline-block; height:38px; width:38px; text-indent:200px; overflow:hidden; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) 0 0 no-repeat;}
+.icobtn-add-album-sub,
+.icobtn-add-album-cancel{vertical-align:middle; margin-left:10px; display:inline-block; height:38px; width:38px; text-indent:200px; overflow:hidden; background:url(https://s1.mi-img.com/img/micloudv2/more-iconsnew1.png) 0 0 no-repeat;}
+
+.icobtn-copy .btn-ct,
+.gl-right .icobtn-down .btn-ct,
+.gl-right .icobtn-del .btn-ct{vertical-align:middle; padding:0; display:inline-block; height:18px; width:18px; margin:0 10px; text-indent:200px; overflow:hidden; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) 0 0 no-repeat;}
+.button.icobtn-edit,
+.button.icobtn-down,
+.button.icobtn-voice,
+.button.icobtn-locked,
+.button.icobtn-clear,
+.button.icobtn-add-album-sub,
+.button.icobtn-add-album-cancel,
+.button.icobtn-more{padding:0;}
+.icobtn-edit{background-position:-1px -179px;}
+.icobtn-more{background-position:-51px -81px;}
+.icobtn-voice{background-position:-0 -490px;}
+.icobtn-voice:hover{background-position:-0 -490px; border:1px solid #d6d6d6; box-shadow:0 5px 15px #bbb;}
+.icobtn-locked,
+.icobtn-locked:hover{background-position:-48px -490px; border:1px solid #d6d6d6; box-shadow:0 5px 15px #bbb;}
+.icobtn-clear,
+.icobtn-clear:hover{background-position:-96px -490px; border:1px solid #d6d6d6; box-shadow:0 5px 15px #bbb;}
+.icobtn-down{background-position:-144px -490px; border:1px solid #cdd3d6;}
+.icobtn-down:hover{background-position:-144px -537px;}
+.icobtn-edit:hover{background-position:-1px -228px;}
+.icobtn-more:hover{background-position:-51px -130px;}
+.icobtn-add-album-sub,
+.icobtn-add-album-cancel{border:1px solid #b6b7b8;}
+.icobtn-add-album-sub{background-position:-144px 0;}
+.icobtn-add-album-sub:hover{background-position:-184px 0;}
+.icobtn-add-album-cancel{background-position:-224px 0;}
+.icobtn-add-album-cancel:hover{background-position:-264px 0;}
+
+/* 这个是默认的删除图标 */
+.global-btn em{cursor:default; display:block; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -138px -184px no-repeat; width:20px; height:20px; margin:9px auto 0 auto;}
+.global-btn:hover em{background-position:-138px -213px;}
+/* 配置的更多图标 */
+.global-morebtn em{background-position:-138px -242px;}
+.global-morebtn:hover em{background-position:-138px -271px;}
+.global-morebtn.up em{background-position:-138px -393px;}
+.global-morebtn.up:hover em{background-position:-138px -422px;}
+
+
+/* *
+ * 新版button
+ * @TODO：上面的内容需要调整
+ * */
+/* btn */
+.icobtn-group,
+  .icobtn-add,
+  .icobtn-del{ position:relative; width:38px; overflow:visible; }
+/* btn-ct background */
+.icobtn-group .btn-ct,
+  .icobtn-add .btn-ct,
+  .icobtn-del .btn-ct,
+  .icobtn-del-concise .btn-ct,/* 图库回收站的清空 */
+  .btn-tips em{ vertical-align:middle; padding:0; display:inline-block; width:38px; height:38px; text-indent:-999em; overflow:hidden; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite11.png) 0 0 no-repeat; }
+/* btn-ct style */
+.icobtn-group .btn-ct{ margin:0 10px 0 18px; width:26px; height:18px; background-position:-239px -201px; }
+.icobtn-group.disabled .btn-ct{ background-position:-244px -231px; }
+.icobtn-add .btn-ct{ margin:0 10px; width:16px; height:16px; background-position:0 -50px; }
+.icobtn-add.disabled .btn-ct{background-position:-25px -50px;}
+.icobtn-del .btn-ct{ margin:0 10px; width:16px; height:16px; background-position:-152px -50px; }
+.icobtn-del.disabled .btn-ct{ background-position:-176px -50px; }
+.icobtn-del-concise .btn-ct{ width:50px; height:16px; line-height:16px; color:#767676; text-indent:14px; background-position:-384px -200px; }
+
+/* button tip */
+.btn-tips{ display:none; position:relative; }
+.btn-tips .tip{ position:absolute; left:50%; bottom:44px; margin-left:-22px; padding:0 10px; border-radius:6px; min-width:28px; height:28px; line-height:28px; background:#363636; color:#FFF; white-space:nowrap; }
+.button:hover .btn-tips{ display:block; }
+.btn-tips em{ position:absolute; left:50%; bottom:38px; margin-left:-4px; width:10px; height:6px; background-position:-255px -207px; }
+
+/* 特殊样式配置 */
+.icobtn-group,
+  .icobtn-group:hover,
+  .icobtn-group:active{ border-right:0 none; }
+.contact-list-padd .icobtn-add .tip{ left:10%; }
+.sms-list-padd .icobtn-add .tip{ left:22%; }
+
+
+/* 搜索框 */
+.global-search{border-radius:20px; border:1px solid #cdd2d5; height:38px; padding:10px 38px; background:#fff;
+-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.global-search i,
+.global-search em{background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -153px -10px no-repeat; width:20px; height:20px; cursor:pointer;}
+.global-search i{float:left; cursor:default; margin:0 0 0 -28px; display:block;}
+.global-search em{float:right; margin:0 -28px 0 0; background-position:-92px -111px; display:none;}
+.global-search input{display:block; height:18px; line-height:18px; width:100%; border:0 none; background:none;}
+.search-hascon em{display:block;}
+
+/* 不支持复制文字的处理 */
+.ll-book-container,
+.mdl-m-m-l,
+.mdl-m-m-r,
+.global-menu,
+.global-search,
+.login-info,
+.contact-list-padd,
+.language-switch,
+.mdl-topline, 
+.mdl-middleline,
+.menu-addgroup,
+.sms-save-note .cancel-save,
+.dialog-tips,
+.ss-innertext,
+.dialog-contact-recover,
+.mes-details-avator .timeline-ico,
+.find-phone-content,
+.dialog .m-p-foot,
+.dialog-input-area,
+.li-font,
+.gallery-list .contact-nickname,
+.m-p-head-ct,
+.add-new-album,
+.mdl-bookshadow{cursor:default; -webkit-user-select:none;-moz-user-select:  -moz-none;-khtml-user-select: none;-ms-user-select:none;-o-user-select:none; user-select: none;}
+
+.cd-field,
+.cd-intro,
+.mes-details-avator .content,
+.sms-text,
+.ll-input-area input{cursor:text; -webkit-user-select:text;-moz-user-select: text;-khtml-user-select: text;-ms-user-select:text;-o-user-select:text; user-select: text;}
+
+/* 浏览器升级 */
+html,body{width:100%; height:100%;}
+body{height:100%; width:100%;} /* 放到jsp中了 background:#4f5762 url(https://s1.mi-img.com/img/micloudv2/contact-bg.png) 0 0 repeat-x; */
+.up-browser-layout{position:absolute; z-index:9991; left:0; top:0; width:100%; height:100%;}
+.up-browser-content{padding-top:140px; width:690px; margin:0 auto;}
+.up-browser-bg{background:url(https://s1.mi-img.com/img/micloudv2/up-browser-ie-bg1.png) 0 0 repeat-x; height:438px; padding:10px; width:670px;}
+.up-browser-container{width:570px; height:249px; padding:20px; margin-top:-460px;}
+.up-browser-container h1{color:#fff; font-size:20px; line-height:1.5; margin:0 0 70px 20px;}
+.up-browser-container .up-browser-intro{color:#c9cbcc; line-height:1.2; padding-left:40px;}
+.up-browser-title{ color:#c9cbcc; margin:20px 0 30px 0; padding-left:40px;} 
+.up-browser-check{padding-left:50px; overflow:hidden;}
+.up-browser-check li{margin-left:40px; float:left; width:110px; font-size:16px; height:142px;}
+.up-browser-check li a{display:block; padding-top:110px; color:#fff; width:110px; overflow:hidden; height:30px;line-height:20px; font-size:12px; text-align:center;}
+.up-browser-ch a{background:url(https://s1.mi-img.com/img/micloudv2/brow_ico6.png) 12px 20px no-repeat;}
+.up-browser-ff a{background:url(https://s1.mi-img.com/img/micloudv2/brow_ico6.png) -191px 20px no-repeat;} 
+.up-browser-ie a{background:url(https://s1.mi-img.com/img/micloudv2/brow_ico6.png) -411px 20px no-repeat;} 
+.up-browser-ch a:hover{background:url(https://s1.mi-img.com/img/micloudv2/brow_ico6.png) -89px 20px no-repeat;} 
+.up-browser-ff a:hover{background:url(https://s1.mi-img.com/img/micloudv2/brow_ico6.png) -299px 19px no-repeat;}
+.up-browser-ie a:hover{background:url(https://s1.mi-img.com/img/micloudv2/brow_ico6.png) -522px 20px no-repeat;}
+
+.login-container{background:#4f5762 url(https://s1.mi-img.com/img/micloudv2/contact-bg.png) 0 top repeat-x; width:100%; height:100%; min-height:750px; position:relative; z-index:9999; overflow:hidden;}
+/*
+.login-container:after {content:""; width:80%; height:50%; border-radius:50%; box-shadow:0 -200px 500px rgba(255,255,255,.2); position:absolute; bottom:-50%; left:10%;} 
+*/
+.layout-login{position:absolute; top:50%; width:100%; margin-top:-318px;}
+.ll-book-container{width:480px; margin:0 auto;}
+.ll-book-top{height:auto; border-top-left-radius:3px; border-top-right-radius:3px;}
+.ll-book-top h4{height:210px; overflow:hidden; margin:0 0 68px 0;}
+.ll-book-top h4 img{margin:0 auto; display:block;}
+.ll-book-top .username{overflow:hidden; color:#515a64; padding-bottom: 20px; padding-left:10px; font-weight: bold;}
+.ll-book-top .username a{color:#7f8c98; float:right; font-weight:normal;}
+.ll-form{width:100%; }
+.ll-input-area{margin:0 100px 20px 100px; position:relative;
+border:1px solid #70767f; background:url(https://s1.mi-img.com/img/micloudv2/input-bg1.png) 0 -236px repeat-x; height:40px; border-radius:4px; padding:10px 41px 10px 10px; 
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+}
+.ll-input-area:first-child{padding:10px;}
+.ll-input-area input{display:block; width:100%; height:100%; font-size:14px; line-height:1.2; color:#d4d5d7; font-weight: bold; border:0 none; background:none;
+}    
+.ll-has-content{background:url(https://s1.mi-img.com/img/micloudv2/input-bg1.png) 0 -188px repeat-x; color:#fff;}
+.ll-input-area input::-moz-placeholder{font-weight: normal; color: #767a7f;}
+.ll-input-area input::-webkit-input-placeholder{font-weight: normal; color:#767a7f;}
+.ll-input-area input:-ms-input-placeholder{font-weight: normal; color:#767a7f;}
+.ll-icon-sub{display: block; position: absolute; background:#ff7e00 url(https://s1.mi-img.com/img/micloudv2/login_turn.png) 0 0 no-repeat; right:-1px; top:-1px; z-index:10; width:40px; height:40px; border-left:1px solid #373b42; border-radius:0 3px 3px 0;}
+.ll-icon-sub.loading{background:url(https://s1.mi-img.com/img/micloudv2/small_loading.gif) 0 0 no-repeat; width:40px; height:40px; border:none; top:9px;}
+.checkcode{display:block; width:180px; height:60px; cursor:pointer; margin:20px auto; border-radius:4px;}
+
+.ll-cookies{position: relative; margin-top: 20px; padding-left: 26px; color:#7f8c98;}
+.ll-cookies .checkbox{margin-left: 0;}
+.forget-pass{float:right; color:#7f8c98;}
+.forget-pass:hover{color:#ff7e00;}
+.ll-book-bottom{text-align:center; height:20px; color:#bac2cd; line-height:20px;}
+.ll-book-bottom a{color:#fff; padding-left:20px; margin-left:20px; border-left:1px solid #fff;}
+.ll-book-bottom a:hover{color:#ff7e00;}
+.ll-book-bottom a:first-child{padding:0; border:0 none; margin:0;}
+.ll-book-bottom-line{padding:0 10px; color:#858c96;}
+.language-switch{color:#d5d8dc; text-align:center; position:absolute; width:100%; position:absolute; bottom:50px;}
+.language-switch span{padding-left:20px; margin-left:20px; border-left:1px solid #d5d8dc;}
+.language-switch span:first-child{padding:0; border:0 none; margin:0;}
+.copy-rights{padding:14px 0; text-align:center; color:#d5d8dc; width:100%; position:absolute; bottom:10px;}
+
+
+/* 联系人搜索结果 */
+.search-num{margin:0 0 16px 20px;}
+/* 联系人搜索框配置 */
+.mi-search{margin:12px 16px 12px 14px;}
+.easy-search{padding:10px;}
+
+/* 联系人当前组 */
+.contact-group-select{color:#000; margin:0 0 16px 20px; line-height:1.2;}
+.contact-group-select .toolmenu em{display:inline-block; cursor:pointer; width:10px; height:8px; vertical-align:middle; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -138px -298px no-repeat;}
+.contact-group-select a span{vertical-align:middle;}
+.contact-group-select a{color:#000; cursor:pointer; overflow:hidden;}
+.contact-group-select .group-name{display:inline-block; float:left; max-width:74%; text-overflow:ellipsis; overflow:hidden;}
+.contact-group-select .group-num{position:static; display:inline-block; float:left; width:auto;}
+
+/* 弹出菜单 */
+/* 联系人左上角的弹框配置 -- 选择联系人下拉菜单 */
+.contact-group-select .switch-group ul{ max-height:304px; }
+.switch-group em.menu-corner{ display: none; }
+.switch-group .checkbox,
+  .switch-group .checkbox:hover,
+  .switch-group .checkbox:active{ top:4px; left:12px; right:auto; background-position:-175px -112px; }
+.switch-group .checkbox.checked,
+  .switch-group .checkbox.checked:hover,
+  .switch-group .checkbox.checked:active{ display:block; background-position:-148px -112px; }
+.switch-group .checkbox{ display: none; }
+
+/* 联系人操作弹框 */
+.func-menu li{padding:0 10px 0 20px; text-align:left;}
+.func-menu li .switch{float:none; display:inline-block; margin-left:10px; width:48px; height:25px; text-indent:-300px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) 0 -311px no-repeat; vertical-align:middle; overflow:hidden;}
+.func-menu li .switch-close{background-position:0 -277px;}
+
+/* 新建联系人选择群组的弹出菜单 */
+.checkgrouplist-menu{padding:10px 0 40px 0;}
+.checkgrouplist-menu li{padding:0 0 0 38px;}
+.menu-addgroup{display:block; padding-left:10px; color:#7f7f7f; height:36px; line-height:36px; border-top:1px solid #ddd;}
+.multiselectionmenu .menu-addgroup:hover{ background:#f5f7f8 url(https://s1.mi-img.com/img/micloudv2/dialoglibg.png) 0 bottom repeat-x; }
+.menu-addgroup .btn-ct{margin:0; padding:0; text-indent:4px; width:100%; line-height:16px; background:none;}
+.menu-addgroup.add-group i{display:inline-block; width:16px; height:16px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -98px -312px no-repeat; vertical-align:-4px; margin-right:12px;}
+
+/* 联系人列表 */
+.contact-list-div .contact-list li,
+  .contact-list-div .contact-list li.cl-selectmode,
+  .contact-list-div .contact-list li:hover{border:0 none; border-bottom:1px solid #cdd2d5;}
+.contact-list li{position:absolute; left:0; width:100%;}
+.contact-list li.item-space-list:hover{background:none;}
+/* 联系人、短信内容列表 */
+.contactlist-container{position:relative; padding:4px 30px 4px 14px; overflow:hidden;}
+.contact-list .contactlist-container{ padding:5px 2px 5px 10px; }
+.global-list .contactlist-index{padding:0 0 0 12px; height:32px; background:#fff url(https://s1.mi-img.com/img/micloudv2/listindex1.png) right 0 repeat-y;}
+.global-list .contactlist-index:hover{background:#fff url(https://s1.mi-img.com/img/micloudv2/listindex1.png) right 0 repeat-y;}
+.global-list .contactlist-index p{font-weight:bold; font-size:14px; line-height:32px;}
+/* 
+li.contact-frist,
+li.contact-frist:hover{border-top:0;}
+*/
+
+/* 联系人列表、短信、图库复制照片 昵称 */
+.contact-nickname{margin-top:11px; height:16px; line-height:1.4; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.contact-phonenum{color:#999; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.second-status{margin:14px 0 0 55px;}
+.contact-list li:hover .contact-nickname{font-weight:bold;}
+.contact-category{float:right; margin:11px 0 0 10px; height:16px; overflow:hidden; max-width:60%; color:#a5acb3; }
+.contact-category span{float:right; display:block; line-height:1.4; margin-right:10px; max-width:100px;  white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.contact-list li:hover .contact-category{color:#76818b;}
+
+/* 联系人详情padd */
+#contact_right{height:100%;}
+#contact-detail-padd2{padding:0 0 64px 0; height:100%;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+#contact-detail-padd2 #contact_detail{height:100%; padding:116px 0 0 0; 
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+#contact-detail-padd2 #contact_detail .cd-thefirst{margin-top:-116px;}
+#contact-detail-padd2 .contact-details-contaniner{height:100%; overflow:auto;}
+
+/* 编辑联系人 */
+.contact-edit-container{margin:0 14px;}
+.contact-edit-title{padding:30px 0 20px 0; text-align:center; font-size:14px; color:#000;}
+.contact-edit-avator{float:left; width:20%;}
+.contact-edit-avator a{cursor:default; width:58px; height:58px; background:url(https://s1.mi-img.com/img/micloudv2/avator3.png) 0 -75px no-repeat; border-radius:3px; border:1px solid #b5b8b9;}
+.contact-edit-avator a,
+.contact-edit-avator img{display:block;}
+.contact-edit-avator img{width:58px; height:58px; border-radius:3px;}
+.edit-contact{border-radius:6px; border:1px solid #cfd5d8; margin:0 auto 10px auto; overflow:hidden;}
+.edit-contact dt,
+.edit-contact dd{border-top:1px solid #e2e6e8; height:40px; margin-top:-1px; float:left; width:80%;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; }
+.edit-contact dt{background:#f5f7f8; cursor:default; border-right:1px solid #e2e6e8; text-align:center; width:20%; line-height:40px; font-size:12px; color:#7a7b7c;}
+.edit-contact dd{background:#fff;}
+.edit-contact .global-input{display:block; padding:8px 10px; margin-right:50px; height:100%;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+}
+.ceditor_group{font-size: 14px;font-weight: bold;line-height: 22px;height: 100%; padding:8px 10px; white-space:nowrap; text-overflow:ellipsis; overflow: hidden;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+}
+.edit-contact .global-input input{display:block; background:none; border:0 none; width:100%; font-size:14px; height:100%; line-height:22px; color:#000; font-weight:bold;}
+.global-input textarea{border:0 none; height:60px; overflow:auto; width:100%; font-size:14px; font-weight:bold; line-height:1.5;}
+.edit-contact input::-moz-placeholder,
+  .edit-contact textarea::-moz-placeholder{font-weight:normal; color:#b0b7bd;}
+.edit-contact input::-webkit-input-placeholder,
+  .edit-contact textarea::-webkit-input-placeholder{font-weight:normal; color:#b0b7bd;}
+.edit-contact .global-btn{width:50px; height:100%; float:right; background:#f5f7f8; border-left:1px solid #e2e6e8; }
+.hasno-btn .global-btn{display:none;}/*-- 这里控制是否显示小按钮 --*/
+.hasno-dt dt{display:none;}/* 这里控制是否显示左边信息 */
+.hasno-dt dd{width:100%;}
+.remark dd{height:80px;}
+.contact-edit-container .button-area{margin:10px 0;}
+.contact-edit-container .ba-addmore{width:100%; height:42px; line-height:40px; display:block; margin-left:0; background:none;}
+.contact-edit-container .ba-addmore:hover{background:none}
+.ba-addmore i{display:inline-block; width:16px; height:16px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -98px -312px no-repeat; vertical-align:-4px; margin-right:10px;}
+.ba-addmore:hover i{background-position:-98px -337px;}
+/* 这里是群组这块区别于上面的配置的部分 */
+.ec-group{background:url(https://s1.mi-img.com/img/micloudv2/addmorebg2.png) 0 0 repeat-x; overflow:visible;}
+.ec-group:hover {background-position:0 -41px;}
+.ec-group dt,
+.ec-group dd,
+.ec-group .global-btn{background:none;}
+.ec-group dt{border-radius:5px 0 0 5px;}
+.ec-group:hover dt{background:#f5f7f8;}
+.ec-group .global-input{padding:0;}
+.ec-group .multiselectionmenu{padding-bottom:0px;}
+.ec-group .multiselectionmenu ul{margin-bottom:10px;}
+
+/* 联系人详情 */
+.contact-details-contaniner{padding:0 40px 0 20px; margin-right:10px;}
+.contact-details{}
+.contact-details dt,
+.contact-details dd{float:left; overflow:hidden;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; 
+}
+.contact-details dt{width:20%; padding-right:16px;}
+.contact-details dt a,
+.contact-details dt em{display:block; float:right;}
+.contact-details dt a{cursor:default;}
+.contact-details dd{width:80%;}
+.cd-div{padding-bottom:10px; border-bottom:1px solid #e1e5e6; margin-bottom:16px;}
+.cd-thefirst{padding:20px 50px 0 20px;}
+.cd-thefirst .cd-div{border-bottom:2px solid #e1e5e6; min-height:68px;}
+.contact-details dd p{line-height:1.5; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.cd-field{color:#000; font-weight:bold; font-size:14px;}
+.cd-field a{color:#000;}
+.cd-field a:hover{color:#0067e8; text-decoration:underline;}
+.contact-details dd p.remark-field{max-height:150px; word-wrap:break-word; word-warp:warp;}
+.cd-intro,
+.cd-group{color:#999;}
+.cd-group span{display: inline-block;}
+.cd-intro{height:18px;}
+.contact-tosms .cd-div{padding-right:40px; position:relative; min-height:40px;}
+.contact-tosms .global-btn{width:40px; height:40px; position:absolute; top:0; right:0;}
+.contact-tosms .global-btn em{cursor:pointer;}
+.contact-details dt em{width:30px; height:30px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) 0 0 no-repeat;}
+dt em.contact-phoneico{background-position:0 -626px;}
+dt em.contact-pinyinico{background-position:0 -664px;}
+dt em.contact-emailico{background-position:-38px -626px;}
+dt em.contact-IMico{background-position:-114px -664px;}
+dt em.contact-callico{background-position:-76px -664px;}
+dt em.contact-webico{background-position:-76px -626px;}
+dt em.contact-webphoneico{background-position:-38px -588px;}
+dt em.contact-mapico{background-position:-114px -626px;}
+dt em.contact-birthico{background-position:-38px -664px;}
+dt em.contact-oldbirthico{background-position:-38px -664px;}
+dt em.contact-groupico{background-position:-152px -664px;}
+dt em.contact-relationico{background-position:-114px -588px;}
+dt em.contact-remarkico{background-position:-152px -588px;}
+dt em.contact-musicico{background-position:-152px -626px;}
+.contact-avatars{width:60px; height:60px; border:1px solid #bebebf; background:url(https://s1.mi-img.com/img/micloudv2/avator3.png) 0 -75px no-repeat; border-radius:3px;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; 
+}
+.contact-avatars img{display:block; border-radius:3px; width:58px; height:58px;}
+
+/* 新建陌生联系人 */
+.add-contact-btn{margin:80px 0; text-align:center;}
+.add-contact-btn .button{margin-left:0;}
+.contact-details dt .stranger{background-position:0 -239px; height:59px;}
+/* 联系人多个选择 */
+.contact-avatorlist-container{padding:10px 6px 0 28px; margin-right:10px; overflow:auto;}
+.contact-avatorlist{margin-left:-26px;}
+.contact-avatorlist li{margin-left:34px; width:66px; margin-bottom:24px; float:left;}
+.contact-avatorlist li p{height:34px; line-height:34px; text-align:center; white-space:nowrap; text-overflow:ellipsis; color:#7f7f7f; overflow:hidden;}
+.ca-avator{border-radius:5px; background:url(https://s1.mi-img.com/img/micloudv2/avator3.png) 0 0 no-repeat; width:64px; height:64px; border:1px solid #c4c4c4;
+  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.ca-avator img{display:block; width:62px; height:62px; border-radius:5px;}/* margin:-1px 0 0 -1px;*/
+#contact_select_mode.m-p{padding:62px 0 52px 0;}
+#contact_select_mode.m-p .m-p-head{margin-top:-60px;}
+#contact_select_mode .contact-avatorlist-container{height:100%; overflow:auto;
+  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+#contact_select_mode .icobtn-del{margin-left:0; border-radius:0 6px 6px 0;}
+#contact_select_mode .icobtn-del:hover{box-shadow:3px 3px 12px rgba(204,204,204,0.5);}
+#contact_select_mode .icobtn-del.disabled:hover{box-shadow:none;}
+#contact_select_mode .icobtn-group{border-radius:6px 0 0 6px; width:54px;}
+
+/* 导入导出联系人 */
+.contact-import{padding:0 20px;}
+.contact-title{font-size:14px; line-height:1.2; color:#000; padding:10px 0 0 0; text-align:center;}
+.contact-import .contact-title{border-bottom:2px solid #e3e7e9; }
+.contact-import p{text-align:center; line-height:1.5; margin:20px 0;}
+.ptips1{color:#000;}
+.ptips2{color:#7c7d7c;}
+.contact-import .ptips2{padding-bottom:20px; border-bottom:1px solid #e6e9ea;}
+/* 导出 */
+.contact-export{padding-left:24%; padding-bottom:20px; border-bottom:1px solid #e6e9ea;}
+.contact-export p{text-align:left;}
+.ce-radioarea{margin-bottom:15px;}
+.radio-intro{display:inline-block; height:20px; line-height:20px; float:left;}
+.simulation-radio{display:inline-block; float:left; width:20px; height:20px; vertical-align:middle; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -138px -78px no-repeat; cursor:pointer; margin-right:10px;}
+.simulation-radio:hover {background-position:-138px -104px;}
+.radio-checked{background-position:-138px -130px;}
+.radio-checked:hover {background-position:-138px -156px;}
+.has-select .simulation-select{float:left;}
+.has-select .simulation-radio{margin-top:10px;}
+
+/* 恢复联系人 */
+.contact-recover .contact-title{border-bottom:2px solid #e3e7e9; margin:0 14px 20px 14px;}
+.cr-p{margin:10px 0 10px 22%; line-height:1.5;}
+.cr-p-last{margin-bottom:30px;}
+.cr-p a{margin-left:14px; color:#647b92;}
+.cr-p span{color:#ce290b; font-weight:bold;}
+
+.time-axis{height:90%;}
+.time-axis ul{height:90%; margin-left:40%; width:18px; border-radius:10px; background:url(https://s1.mi-img.com/img/micloudv2/timeaxisbg1.png) right 0 repeat-y;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+}
+.time-axis ul li{height:14%; border-bottom:1px solid #619840; background:url(https://s1.mi-img.com/img/micloudv2/timeaxisbg2.png) right 0 repeat-y;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+}
+.time-axis ul li a{width:170px; cursor:default; margin-left:-147px; display:block; color:#000; text-align:right;}
+.time-axis ul li.first{height:6%;}
+.time-axis ul li.last{height:10%;}
+.time-axis ul li.first{border-top-left-radius:10px; border-top:1px solid #bec3c7; border-top-right-radius:10px;}
+.time-axis ul li.last{border-bottom-left-radius:10px; border-bottom-right-radius:10px;}
+.time-axis ul li.hasnobg{background:none; border-bottom:1px solid #bec3c7;}
+.ta-line{display:inline-block; width:10px; height:0; padding-top:2px; vertical-align:middle; border-top:1px solid #cfd4cc; overflow:hidden; margin-right:4px; margin-top:-14px;}
+.ta-ico{display:inline-block; width:28px; height:28px; margin-top:-14px; vertical-align:middle; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) 28px 28px no-repeat;}
+.ta-tips{margin:-16px 10px 0 0; vertical-align:middle; width:110px; display:inline-block;}
+a:hover .ta-ico{background-position:3px -426px;}
+a:hover .ta-tips{font-weight:bold;}
+.ta-current .ta-tips{color:#ce290b;}
+.ta-current a:hover .ta-ico,
+.ta-current .ta-ico{background-position:-1px -391px;}
+.ta-current a:hover .ta-tips{font-weight:normal;}
+.result-tips{display:inline-block; vertical-align:middle; margin:-48px 0 0 40px; width:140px;}
+/* 恢复联系人的弹框配置 */
+.func-menu2{width:150px;}
+.func-menu2 li{padding:0;}
+.func-menu2 li .li-font{text-align:center; color:#7f7f7f;}
+.func-menu2 .menu-corner{margin-left:0; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -170px -320px no-repeat; top:20px; bottom:auto; left:-7px; width:8px; height:12px;}
+.contact-recover-menu{padding:0; width:60px; box-shadow: 2px 4px 8px #ddd;}
+.contact-recover-menu li .li-font{color:#000;}
+.contact-recover-menu li:hover{background:none;}
+.contact-recover-menu .menu-corner{top:10px;}
+
+/* 联系人左边列表自适应class */
+.contact-list-padd{padding:100px 0 70px 0; height:100%;
+  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.frame-area{position:relative; margin:0 16px 0 14px; border:1px solid #C7CED2; border-radius:6px; height:100%; overflow:hidden; background:#f7f7f7 url(https://s1.mi-img.com/img/micloudv2/globallibg-gray1.png) right 0 repeat-y;}/* 统一的圆角框区域 */
+.contact-list-div{height:100%; border-radius:6px; overflow:auto;}
+.contact-list-padd .mi-search{margin-top:-78px; background:none;}
+
+/* 每个模块的最外层包裹层 */
+.micloud-contact-details{padding:0 70px 0 40px; margin-top:-80px; height:600px; overflow:auto;}/* 这一行样式有用到嘛？*/
+
+/* 这是全局的列表样式 */
+.global-list{position:relative; margin-top:-2px; height:auto; border-bottom:1px solid #cdd2d5; }/*overflow:auto;*/
+.global-list li{border-top:1px solid #cdd2d5; height:50px; background:#f7f7f7 url(https://s1.mi-img.com/img/micloudv2/globallibg-gray1.png) right 0 repeat-y;
+  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.global-list li:hover,
+  .global-list li.cl-selectmode,/* @TODO：兼容样式 -- 请调整为selected */
+  .global-list li.selected{border-top:1px solid #cfd5d9; background:#f2f2f2 url(https://s1.mi-img.com/img/micloudv2/globallihoverbg-gray.png) right 0 repeat-y;}
+.global-list li.contact-empty-tip{height: 100%;padding-top: 50%;background: none;text-align: center;font-weight: bold;font-size: 14px; color:#7b7b7b; border:0 none;}
+.global-list li.contact-empty-tip:hover{background:none; border:0 none;}
+.global-list .checkbox{left:auto; right:7px; display:none;}
+.global-list li:hover .checkbox,
+  .global-list .checkbox.checked{display:block;}
+  .global-list .checkbox.clicked-checkbox{display:block;}/* @TODO：兼容样式 -- 请修改成checked */
+/*.global-list li.li-tip-empty{height:100%; margin:0; padding:50% 0 0 0; line-height:2.5; background:none; text-align:center; font-weight:bold; font-size:14px; color:#000; border:0 none; }
+.global-list li.li-tip-empty:hover{background:none;}*/
+.global-list li.li-tip-empty{ position:absolute; top:0; left:0; padding:0; border:0 none; width:100%; font-size:14px; }
+.global-list li.li-tip-empty:hover{background:none;}
+.sms-save li.li-tip-empty{top:-1px;}
+
+/* 进入全局选择模式 */
+.contact-list-selectmode .contact-category{padding-right:32px;}
+.contact-list-selectmode li .checkbox{display:block;}/* 多一层级可以覆盖掉短信的重置部分 */
+/* 联系人右边详情自适应class */
+.contact-details-padd{padding:116px 0 68px 0; height:100%;
+  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+}
+.contact-details-padd .cd-thefirst{margin-top:-114px;}
+.contact-details-padd .contact-details-contaniner{height:100%; padding:0 60px 0 20px; overflow:auto; margin-right:10px;}
+/* 新建联系人自适应class */
+.contact-edit-padd{height:100%; padding:66px 0 70px 0;
+  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.contact-edit-padd .contact-title{margin-top:-62px;}
+.contact-edit-padd .contact-edit-container{margin-right:10px; padding:0 10px 0 14px; height:100%; overflow:auto;}
+/* 恢复联系人右边自适应class */
+.contact-recover-padd{padding:160px 0 0 0; height:100%;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+}
+.contact-recover-padd .contact-title{border-bottom:2px solid #e3e7e9; margin:-160px 14px 20px 14px;}
+
+.mdl-m-m-r .m-p-head,
+  .mdl-m-m-r .m-p-head-ct{border-bottom:0 none; text-align:center;}
+/* 编辑联系人部分 */
+#edit-contact-padd.m-p{padding:64px 0 48px 0;}
+#edit-contact-padd.m-p .m-p-head{margin-top:-64px;}
+#edit-contact-padd .contact-edit-container{height:100%; overflow:auto; margin:0 10px 0 14px; padding-right:10px;}
+
+/*新建联系人*/
+#create-contact-padd.m-p .m-p-head{margin-top:-56px;}
+#create-contact-padd .m-p-head-ct{text-align:center;}
+#create-contact-padd.m-p{padding:56px 6px;}
+#create-contact-padd .contact-edit-container{height:100%; overflow:auto; margin:0 10px 0 14px; padding-right:10px;}
+#ceditor_cato_emails{overflow:visible;}
+  #ceditor_cato_emails dt{ border-radius:6px 0 0 6px; }
+  #ceditor_cato_emails .dialog-menu li{ padding: 0 28px; }
+
+
+/* 这里是过渡期的弹框配置 -- 联系人下拉配置 */
+.multiselectionmenu ul{ max-height:150px; }
+.multiselectionmenu li .li-font{text-align:left;}
+/* 配置checkbox */
+.multiselectionmenu .checkbox,
+  .multiselectionmenu .checkbox:hover{ background-position: -175px -112px; left:10px; top:6px; }
+.multiselectionmenu .checkbox.checked,
+  .multiselectionmenu .checkbox.checked:hover{ background-position: -148px -112px; }
+
+/* 恢复联系人模块自适应 */
+.recover_contact_padd.m-p{padding:64px 0 0 0;}
+.recover_contact_padd.m-p .m-p-head{margin-top:-66px;}
+.recover_contact_padd .m-p-frame{height:100%; padding:66px 0 0 0;
+box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.recover_contact_padd .m-p-frame .cr-p:first-child{margin-top:-56px;}
+.recover_contact_padd .m-p-head-ct{margin:0 14px 0 16px; border-bottom:2px solid #e3e7e9;}
+/* .mdl-m-m-r .m-p-head-ct{color:#7f7f7f; font-size:22px; border:0 none; font-weight:normal; text-align:center;} 太丑，先不调整 */
+
+/* 倒入联系人 */
+.contact-import .button-area a{margin-left:20px;}
+.button-area a.checkfile{padding:0 30px;}
+
+/* 通讯录还原弹框 */
+.dialog-contact-recover{padding:30px 0 40px 80px;}
+.dcr-container .simulation-select{display:inline-block; vertical-align:middle;} 
+.dcr-container .select-frame{width:70px; vertical-align:middle; display:inline-block; overflow:hidden; padding:0 24px 0 10px;}
+.dcr-container .dialog-menu{position:absolute; width:100px; padding:10px 0; z-index:10; max-width:70px;}
+.dcr-container .dialog-menu ul{max-height:180px;}
+.dcr-container .dialog-menu li a{display:block; line-height:30px; cursor:default; padding-left:11px; color:#999;}
+.dcr-container .dialog-menu li .li-font{width:46px;}
+.dcr-container .select-corner{width:24px; margin:0 -26px 0 0;} 
+.dcr-date{display:inline-block; height:40px; line-height:38px; margin:0 6px; vertical-align:middle;}
+.dcr-tips{font-size:16px; margin-bottom:16px; font-weight:bold;}
+.dcr-time{margin-top:10px; color:#999;}
+
+/* 空模板 */
+.contact-empty{width:100%; height:100%; background:url(https://s1.mi-img.com/img/micloudv2/contactdefault.png) center center no-repeat;}
+
+
+/* 短信皮肤 */
+.sms .mdl-t,
+  .sms .mdl-t-r,
+  .sms .mdl-b,
+  .sms .mdl-b-r{background:url(https://s1.mi-img.com/img/micloudv2/corner-green.png) 0 0 no-repeat;}
+  .sms .mdl-t-r{background-position:right 0;}
+  .sms .mdl-b{background-position:0 -26px;}
+  .sms .mdl-b-r{background-position:right -26px;}
+.sms .mdl-t-m-l,
+  .sms .mdl-t-m-r,
+  .sms .mdl-b-m-l,
+  .sms .mdl-b-m-r{background:url(https://s1.mi-img.com/img/micloudv2/top-green.png) right 0 no-repeat;}
+  .sms .mdl-t-m-r{background-position:0 -34px;}
+  .sms .mdl-b-m-l{background-position:right -69px;}
+  .sms .mdl-b-m-r{background-position:left -103px;}
+.sms .mdl-t-m-l-c,
+  .sms .mdl-t-m-r-c,
+  .sms .mdl-b-m-l-c,
+  .sms .mdl-b-m-r-c{background:url(https://s1.mi-img.com/img/micloudv2/top-repeat-green.png) 0 0 repeat-x;}
+  .sms .mdl-b-m-l-c,
+  .sms .mdl-b-m-r-c{background-position:0 -26px;}
+.sms .mdl-m,
+  .sms .mdl-m-r{background:url(https://s1.mi-img.com/img/micloudv2/left-green.png) 0 0 repeat-y;}
+  .sms .mdl-m-r{background-position:right 0;}
+
+/* 短信列表左边的自适应class */
+.sms-list-padd{padding:52px 0 68px 0; height:100%;
+   box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+.sms-list-padd .mi-search{margin-top:-90px; height:38px;}/* 存在input的时候 */
+/* 暂时不存在 */
+.sms-list-padd .mi-search{height:0; margin:0;}
+
+/* 短信右边 */
+.mes-details-container{padding:0 30px;}
+.mes-details-container .button-area{margin:15px 0 20px 0;}
+#sms_detail_deleted_frame .button-area{margin-top:4px;}
+.no-corner{border-radius:0 0 6px 6px;}
+.sms-frame-area{overflow:auto; height:100%;}
+
+/* 配置的短信图标　*/
+.global-mesbtn em{background-position:-98px -80px; width:32px; height:32px; margin:4px auto 0 auto;}
+.global-mesbtn:hover em{background-position:-98px -119px;}
+
+/* 这是全局的列表样式 -- 单独配置短信模块 */
+.global-list.sms-list{position:relative; margin-top:-1px; height:auto; border:0 none;}
+.sms-list .checkbox{left:auto; right:6px; top:28px; display:none;}
+.global-list.sms-check-list li:hover{ background:#f7f7f7 url(https://s1.mi-img.com/img/micloudv2/globallibg-gray1.png) right 0 repeat-y; }
+
+/* 联系人、短信、图库复制照片 列表头像 */
+.contactlist-avatar{float:left; overflow:hidden; margin-right:14px; width:40px; height:40px; border:1px solid #b6b7b8; background:url(https://s1.mi-img.com/img/micloudv2/avator3.png) 0 -143px no-repeat; border-radius:3px;
+  box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;
+}
+.contactlist-avatar img{display:block; height:38px; width:38px;}
+
+/* 短信表情的弹框配置 */
+.emotion-menu{width:500px; padding:0;}
+.emotion-menu .emotion-tab{padding:10px 22px 0 22px; overflow:visible; background:#f7f7f7; border-bottom:1px solid #ccc; border-top-left-radius:3px; border-top-right-radius:3px;}
+.emotion-tab li{float:left; height:30px; padding:0; width:22px; margin-right:26px; overflow:visible;}
+.emotion-tab li:hover{background:none;}
+.emotion1,
+.emotion2,
+.emotion3{display:block; width:20px; height:20px; margin:0 auto; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) no-repeat;}
+.emotion1{background-position:-49px -421px;}
+.emotion2{background-position:-49px -450px;}
+.emotion3{background-position:0 -458px;}         
+.current-corner{display:none; width:14px; height:7px; overflow:hidden; position:relative; bottom:-4px; left:4px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -49px -479px no-repeat;}
+.emotion-tab li.current .current-corner{display:block;}
+.emotion-menu .emotion-ul{margin:10px; overflow:auto; height:200px;}
+.emotion-ul li{width:30px; height:30px; padding:0; float:left; background:#fff; border:1px solid #fff;}
+.emotion-ul li:hover{background:#fff; border:1px solid #cbd0d5;}
+.emotion-ul li a{display:block; margin:5px; width:20px; height:20px;}                                                                                                                               .emotion-ul li a img{display:block;}
+/* 短信选择需要用的手机 */
+.check-num-menu{padding:0;}
+.check-num-menu li{padding:0 28px 0 10px;}
+.check-num-menu li .checkbox{display:none; top:4px;}
+.check-num-menu li.gm-current .checkbox{display:block; background-position:-148px -110px; }
+.check-num-menu li.gm-current .checkbox:hover{background-position:-148px -110px;}
+
+/* 短信tab页 */
+.tab-area{height:40px; border:1px solid #cfd4d7; border-bottom:0 none; border-radius:5px 5px 0 0; margin:0 16px 0 14px; background:#fff url(https://s1.mi-img.com/img/micloudv2/smsnav-bg.png) right 0 repeat-y;}
+#sms_tab.tab-area{margin:-39px 16px 0 14px;}
+.tab-area li{box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; width:50%; height:40px; float:left; position:relative;}
+.tab-area li.current-status a{color:#ce290b;}
+.tab-area li a{display:block;  text-align:center; height:20px; line-height:20px; color:#000; margin-top:10px; font-weight:bold;}
+.tab-area li a:hover{color:#ce290b;}
+.tab-area li:first-child{border-right:1px solid #cfd4d7;}
+.tab-corner{display:none; width:12px; height:7px; position:absolute; bottom:-2px; left:50%; z-index:10; margin-left:-6px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -169px -286px no-repeat;}
+.another-corner .tab-corner{background-position:-169px -303px;}
+li.current-status .tab-corner{display:none;}
+.no-corner .left-corner,
+.no-corner .right-corner{display:none;}
+.tab-area-tips{height:40px; line-height:40px; padding-left:10px; color:#7f7f7f;}
+/* 全部短信列表 */
+.sms-list li{padding:14px 30px 14px 0; position:relative; height:80px; overflow:hidden;}
+  .sms-list-avatar{float:left; margin:4px 10px 0 10px; width:38px; height:38px; background:url(https://s1.mi-img.com/img/micloudv2/avator3.png) 0 -143px no-repeat; border:1px solid #babbbc; border-radius:3px;}
+    .stranger{background-position:0 -191px;}/* 这个是表示陌生人短信时的头像背景 */
+    .sms-list-avatar img{display:block; height:38px; width:38px; border-radius:3px;}
+    .content-p{height:18px; color:#666; text-overflow:ellipsis; white-space:nowrap; _white-space:normal; overflow:hidden; line-height:1.3;}
+    .content-p img{vertical-align:middle; width:18px; height:18px;}
+	.content-date{color:#b0b7bd;}
+    .content-sms-title{height:18px; line-height:16px; overflow:hidden;}
+    .content-name{max-width:88%; color:#000; font-weight:bold; text-overflow:ellipsis; white-space:nowrap; _white-space:normal; overflow:hidden;display:inline-block; *display:inline; *zoom:1; vertical-align:middle; }
+       /*  这个是短信条数气泡 */
+       .num_pop{display:inline-block; background:url(https://s1.mi-img.com/img/micloudv2/pop_bgs2.png) left 0 no-repeat; margin-left:4px; height:14px;overflow:hidden; color:#fff; padding-left:5px; vertical-align:middle;}
+       .num_pop s{background:url(https://s1.mi-img.com/img/micloudv2/pop_bgs2.png) right -14px no-repeat; height:14px; line-height:14px; display:block; padding:0 5px 0 0; text-decoration:none; }
+       /* 这个是已读后的显示状态 */
+       .num_nobg{background:none; padding-left:2px; color:#666;}
+       .num_nobg s{background:none;}
+.sms-list li.selected .content-name{color:#000;}
+
+/* 短信详情头像部分 */
+.mes-details-avator{margin-top:13px; border-bottom:2px solid #e3e7e9;}
+.mes-details-avator .sms-list-avatar{cursor:pointer; margin:0 15px 10px 0;}
+.mes-details-avator .content-name{font-size:16px; line-height:1.5;}
+.mes-details-avator .content{overflow:hidden;}
+.mes-details-avator p{max-width:64%;}
+.timeline-ico{float:right; color:#717171; margin-top:-18px;}
+.timeline-ico i{cursor:pointer; display:inline-block; width:16px; height:16px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -98px -363px no-repeat; margin-right:6px; vertical-align:middle;}
+
+/* 短信详情 */
+.mes-details-time{text-align:center; margin:20px 0;}
+.mes-details-time span{display:inline-block; padding:0 26px; height:20px; line-height:20px; color:#8f8f8f; background:#efefef; border-radius:10px;}
+.mes-pop-container{margin:20px 10px 20px 0;}
+.mes-pop-box{position:relative; border:1px solid #e2e2e2; float:left; max-width:74%; padding:14px; min-width:130px; background:#f7f7f7 url(https://s1.mi-img.com/img/micloudv2/readstatus-gray.png) 0 -1px repeat-x; border-radius:5px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+.sms-text{line-height:20px; user-select: text; cursor:text; word-break:break-all; word-wrap:warp; word-wrap:break-word;}
+.mes-pop-action{position:absolute; visibility:hidden; bottom:-15px; right:8px; border:1px solid #dcdcdc; background:#fff; padding:0 14px; height:22px; line-height:22px; border-radius:10px;}
+.mes-pop-box:hover .mes-pop-action{visibility:visible;}
+/* 短信功能小图标 */
+.mes-pop-action a{display:inline-block; cursor:default; width:16px; height:16px; text-indent:300px; overflow:hidden; vertical-align:middle; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -125px -202px no-repeat;}
+.mes-pop-action .mpa-save:hover {background-position:-150px -202px;}
+.mes-pop-action .mpa-del-save{background-position:-175px -202px;}
+.mes-pop-action .mpa-del-save:hover {background-position:-150px -202px;}
+.mes-pop-action .mpa-del{background-position:-29px -202px;}
+.mes-pop-action .mpa-del:hover {background-position:-53px -202px;}
+.mes-pop-action .mpa-cancel-del{background-position:-77px -202px;}
+.mes-pop-action .mpa-cancel-del:hover {background-position:-101px -202px;}
+
+.mes-pop-savemark{position:absolute; top:-4px; right:-6px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -49px -395px no-repeat; width:20px; height:20px; display:block;}
+.mes-status{position:absolute; top:50%; left:-68px; width:60px; text-align:right; margin-top:-6px; display:none; color:#b0b7bd;}
+.mes-status-fall{margin-top:-19px; width:140px; left:-148px;}
+.mes-status-fall .button{padding:0 10px; vertical-align:baseline;}
+.mes-pop-corner{position:absolute; top:-7px; left:16px; display:block; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -314px -178px no-repeat; width:14px; height:8px;}
+.mes-default-sent .mes-pop-box{float:right; background:#b0e167 url(https://s1.mi-img.com/img/micloudv2/readstatus-green1.png) 0 0 repeat-x; border:1px solid #7ebc59; border-bottom:1px solid #4a9019;}
+.mes-default-sent .mes-status{display:block;}
+.mes-default-sent .mes-pop-corner{background-position:-362px -177px; bottom:-8px; right:16px; top:auto; left:auto;}
+.mes-web-sent .mes-pop-box{float:right; background:#b1dfff url(https://s1.mi-img.com/img/micloudv2/readstatus-blue.png) 0 0 repeat-x; border:1px solid #8cb7e2; border-bottom:1px solid #3e7ebe;}
+.mes-sent-fall .mes-pop-box{float:right; background:#f5b87a url(https://s1.mi-img.com/img/micloudv2/mes-status4.png) 0 0 repeat-x; border:1px solid #eaac6c;}
+.mes-web-sent .mes-status{display:block;}
+.mes-sent-fall .mes-status{display:block;}
+.mes-web-sent .mes-pop-corner{background-position:-338px -177px; bottom:-8px; right:16px; top:auto; left:auto;}
+.mes-sent-fall .mes-pop-corner{background-position:-338px -177px; bottom:-8px; right:16px; top:auto; left:auto;}
+.mes-default-sent .mes-pop-action,
+.mes-sent-fall .mes-pop-action,
+.mes-web-sent .mes-pop-action{right:auto; left:10px;}
+
+/* 短信收藏列表 */
+.sms-save li{padding:16px; height:auto;}
+.sms-save-container p{line-height:1.5; color:#666; word-break:break-all; word-wrap:warp; word-wrap:break-word;}
+.sms-save-note{margin-top:4px; height:18px; line-height:18px;}
+.sms-save-note .sms-save-date{float:left; display:block; color:#b0b7bd;}
+.sms-save-note .cancel-save{display:none; float:right; color:#666; line-height:16px;}
+.sms-save-note .cancel-save i{ display:inline-block; width:18px; height:18px; vertical-align:middle; margin-right:6px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -138px -366px no-repeat;}
+.sms-save li:hover .cancel-save{display:block;}
+
+/* 新建短信 */
+/* 新建短信的padd */
+#sms_detail_editor_frame{padding:0 30px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+#sms_new_list{min-height:100%;}
+.add-message{height:auto; position:relative;}
+.add-message h4{text-align:center;}
+.am-title{display:inline-block; font-size:14px; height:40px; line-height:40px;}
+.add-message .button{margin:0; float:left;}
+.search-edit{min-height:34px;position:absolute;padding:0 38px 0 58px; color:#828282; width:100%;
+  box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;
+  }
+.search-edit em.st-tel{display:inline-block; cursor:pointer; top:10px; right:0; position:absolute; height:22px; width:26px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -50px -276px no-repeat;}
+/* .search-edit em.st-tel:hover {background-position:0 -39px;}*/
+.search-edit em.st-count{display:none; top:34px; right:4px; position:absolute; color:#999;}/*  这里如果高度超过了一排就让计数器出来 */
+.st-tips{position:absolute; left:0; top:0; padding-left:10px; width:62px; height:100%; line-height:32px; border:1px solid #d3d5d6; border-right:0 none; border-radius:6px 0 0 6px;
+  box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+.st-inner{width:100%; height:100%; max-height:150px; overflow:auto; font-size:0; padding-top:2px; border:1px solid #d3d5d6; border-left:0 none; border-radius:0 6px 6px 0;
+  box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+.st-inner-con{}
+.st-inner input{background:none; max-width:160px; vertical-align:middle; border:0 none; font-size:14px; display:inline-block; color:#62707c; height:22px; line-height:22px;}
+.st-inner .name{background:#f5f5f5 url(https://s1.mi-img.com/img/micloudv2/smspicker-bg.png) 0 0 repeat-x; max-width:180px; vertical-align:middle; font-size:12px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; border:1px solid #d7d9da; border-radius:6px; position:relative; padding:0 18px 0 6px; display:inline-block; color:#6a6a6a; margin:0 2px 2px 0; height:26px; line-height:26px;}
+.st-inner .name:hover {border:1px solid #c3c5c5;}
+.st-inner .name-error{color:#fff; background:#cc2d0f; border:1px solid #cc0000;}
+.st-inner .name-error:hover {background:#d65c33; border:1px solid #cc0000;}
+.st-inner .name b{display:inline-block; position:absolute; top:9px; right:4px; width:12px; height:12px; cursor:pointer; background:url(https://s1.mi-img.com/img/micloudv2/iconsprite8.png) -199px -204px no-repeat; vertical-align:middle;}
+.st-inner .name b:hover{background-position:-219px -204px;}
+.st-inner .name-error b{background-position:-122px -291px;}
+.st-menu{width:200px; height:auto; padding:0; border:1px solid #d1d6da; background:#fff; position:absolute; z-index:2;}
+.st-menu ul{background:#fff; border-radius:3px; max-height:280px;}
+.st-menu li{height:54px; border-top:1px solid #e8ebec; padding:10px 20px;
+ box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+.st-menu li:first-child{border-top:0 none;}
+.st-menu li:hover {background:#eff3f6;}
+.st-menu .on-select {background:#eff3f6;}
+.st-menu li span.sm-num{color:#7f7f7f; display:block; padding-top:6px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.st-menu li span.sm-name{ white-space:nowrap; text-overflow:ellipsis; overflow:hidden; display:block; width:100%; line-height:1.2; font-size:14px; font-weight:bold;}
+.sm-num b{color:#cc2d0f;}
+.st-menu li i{font-style:normal;}
+/* 发短信接口 */
+.sent-mes-v2{position:absolute; bottom:11px; right:0; width:100%; padding:0 30px;
+  box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;
+}
+.mes-details-container .sent-mes-v2{ margin-bottom:13px;}
+.smv-container{position:relative; padding:0 80px 0 50px;}
+.smv-face{position:absolute; left:0; bottom:0; display:block; float:left; width:36px; height:36px; border:1px solid #d1d1d1; border-radius:6px; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -2px -345px no-repeat;}
+.smv-write{border:1px solid #c6cdd1; border-radius:6px; height:38px; padding:10px;
+ box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; 
+}
+.smv-write textarea{border:0 none; height:100%; width:100%; border-radius:3px; background:none; color:#333; resize:none; overflow:auto;
+ box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; 
+ }
+.smv-container .button{position:absolute; bottom:0; right:0; float:right;}
+.smv-top{width:100%; margin-bottom:10px; color:#9da2aa;}
+.smv-count-tips{float:left; margin-left:48px;}
+.smv-group{float:right; margin-right:80px; cursor:pointer;}
+.smv-group em{margin-left:6px; display:inline-block; width:10px; height:6px; vertical-align:middle; background:url(https://s1.mi-img.com/img/micloudv2/all-iconsnew9.png) -138px -301px no-repeat;}
+
+/* 短信删除部分 */
+.bread-crumbs{margin:20px 0 14px 4px;}
+.bread-crumbs a{color:#000; vertical-align:middle; cursor:default;}
+.bread-crumbs a:first-child{cursor:pointer; }
+.bread-crumbs .bc-sign{color:#778391; margin:0 6px;}
+.mes-del-clear{margin:14px 0 0 14px;}
+/* 短信选择列表 */
+.sms-check-container{height:auto; max-height:100%; border:1px solid #d2d7da; overflow:auto; margin:0 22px 0 20px; border-radius:5px;}
+
+/* 短信timeline */
+.sms_timeline_frame{height:164px; overflow:hidden;}
+.time_line {border:1px solid #d2d7da; border-bottom: 3px solid #cdd3d9; position: relative; height:154px; background:#f3f6f9 url(https://s1.mi-img.com/img/micloudv2/timelinebg.png) repeat-x;}
+.tl_month { position: relative; }
+.tl_mm { width: 36px; height: 136px; position: relative; float: left; text-align: center; color: #7f7f7f; font-size: 12px; zoom:1;}
+.tl_mm:hover { background: url(https://s1.mi-img.com/img/micloudv2/tmhoverbgs.png) 0 0 no-repeat; }
+.tl_mm[count="0"]:hover{background:none;}
+.hasno_mthbg{color:#999;}
+.hasno_mthbg:hover{background:none;}
+
+.tl_mmdate {width:auto; border:1px solid #cfd5d9; border-top:0 none; background:#feffff url(https://s1.mi-img.com/img/micloudv2/tl_mmdate_bg.png) 0 0 repeat-x; padding:0 10px; height: 118px; border-bottom-left-radius:5px;  border-bottom-right-radius:5px;}
+.tl_mmdate:hover {background:#feffff url(https://s1.mi-img.com/img/micloudv2/tl_mmdate_bg.png) 0 0 repeat-x;}
+.tl_mmdate .mth_bg, .tl_mmdate .mth_nu { display: none; }
+.mth_bg { height: 20px; width: 35px; max-height:45px; position: absolute; left: 0; bottom: 64px; background: #ff9d00; }
+            .mth_nu { height: 34px; width: 100%; padding-top: 14px; position: absolute; left: 0; bottom: 16px; }
+            .mth_nu em { display: none; width: 11px; margin: 8px auto 0 auto; height: 10px; background: url(https://s1.mi-img.com/img/micloudv2/timeline-more.png) 0 center no-repeat; cursor: pointer; }
+            .tl_mm:hover em { display: block; }
+            .hasno_mthbg:hover em{display:none;}
+            .tl_year { width:50px; height: 22px; line-height: 22px; text-align: center; font-size: 16px; color: #c3cdd7; font-weight: bold; border-left: 1px solid #d2d7da; position: absolute; z-index:16; top:0; left: 74px; }
+            .tl_tips { width: 80px; top: -36px; left: 100px; position: absolute; z-index:18; padding: 2px 0 4px 0; border-radius: 3px; background: #000; opacity: 0.8; filter: alpha(opacity=80); }
+            .tl_tips .mes_num { color: #fff; font-size: 12px; text-align: center; line-height: 18px; }
+            .tl_tips .current_date { color: #7f7f7f; font-size: 12px; text-align: center; }
+            .tl_tips em { display: block; height: 0; width: 0; border: 6px solid transparent; border-top: 6px solid #000; position: absolute; bottom: -12px; left: 36px; }
+            .color_hui { color: #c6c6c6; }
+            .tl_slibebar { width: 70px; cursor: pointer; height: 18px; position: absolute; bottom: -10px; left: 50px; background: url(https://s1.mi-img.com/img/micloud/timeline_bar.png) no-repeat; }
+            .tlm_daybox { overflow: hidden; }
+            .tlm_dayth { float: left; width: 36px; height: 115px; position: relative; }
+            .tlm_daybg { margin: 0 auto; width: 10px; height: 40px; max-height:45px; position: absolute; left: 13px; background: #ff9b00; bottom: 44px; }
+            .tlm_daynum { text-align: center; width: 36px; height: 29px; padding-top: 14px; position: absolute; bottom: 0; }
+            .time_daybar { position: absolute; left: 0; bottom:-10px; z-index: 2; cursor: pointer; width: 70px; margin-left:-10px; line-height: 18px; color: #777; }
+            .time_daybar span{display: block;background: url(https://s1.mi-img.com/img/micloud/timeline_daybar.png) center 0px no-repeat;height: 20px;line-height: 52px;text-align: center;font-weight: bold;}
+			.tm_currentbg { background: #F35a0c; }
+            .tm_currentco { color: #ff7e00; }
+
+/* 短信整段选择模式 */
+#sms_right{position:relative; height:100%;}
+#sms_detail_select_frame.m-p{padding:64px 0 48px 0;}
+#sms_detail_select_frame.m-p .m-p-head{margin-top:-64px;}
+
+/* 短信删除模块 */
+.sms-del-padd{padding:112px 0 70px 0;}
+.sms-del-padd .bread-crumbs{margin-top:-92px;}
+
+/* 这里是短信模块高度没有算对的情况下的自适配 */
+#sms_full_list_frame{min-height:100%;}
+#sms_locked_list_frame{min-height:100%;}
+#sms_deleted_list_frame{min-height:100%;}
+
+/* 未开启短信文字提示 */
+.no-intro-mes{position:absolute; width:100%; top:50%; left:0; margin-top:40px; color:#687a8c; text-align:center;}
+.no-intro-mes p{font-weight:bold; font-size:14px; line-height:2;}
+.no-intro-mes a{color:#687a8c; text-decoration:underline;}
+
+/* 空模板 */
+.mes-empty{width:100%; height:100%; background:url(https://s1.mi-img.com/img/micloudv2/smsdefault.png) center center no-repeat;}
+.mes-fav-empty{width:100%; height:100%; background:url(https://s1.mi-img.com/img/micloudv2/messavedefault.png) center center no-repeat;}

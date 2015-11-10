@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MES-购物车</title>
+  <% include includes/static_config %>
+  <% include includes/static_loader %>
+  <% include includes/head_script %>
+  <link rel="stylesheet" type="text/css" href="<%=STATIC_DOMAIN%>touch/css/shopcar.css" />
+</head>
+<body>
+ <div id="app_main" class="app-main app-nav">
+    <% include includes/header_v2 %>
+    <div class="scroll-area shop-car" style="padding-top:60px">
+	  <h4 class="wap-order-title-item" id="shopcar_title">我的购物车</h4>     
+
+    </div>
+    <div class="wap-total-btn-area">
+      <p class="wtb-item-btn">
+        <a href="/checkout" class="btn status1-btn">去结算</a>
+      </p>
+      <p class="wtb-item-total">
+      	总计<span id="total_price"></span>元<br>
+      	<span style="color:#999;"><span id="staff_count">0</span>件商品</span>
+      </p>
+    </div>
+  </div>
+  <script>
+  M.loading();
+  </script>
+ <script src="<%=STATIC_DOMAIN%>touch/js/shopcar_v2.js"></script>
+ <% include includes/baidu %>
+</body>  
+</html>
+

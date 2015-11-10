@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MES-修改手机</title>
+  <% include includes/static_config %>
+  <% include includes/static_loader %>
+  <% include includes/head_script %>
+</head>
+<body>
+  <div id="app_main" class="app-main app-nav">
+    <% include includes/header_v2 %>
+
+    <div class="scroll-area">
+      <div class="content-area">
+        <div class="dialog" style="top:60px;">
+  <div class="dialog-head">
+    <p class="dia-title">修改手机</p>
+    <a href="" class="close-ico">X</a>
+  </div>
+  <div class="dialog-con">
+    <form action="">
+      <div class="check-container">
+        <input type="text" class="global-input slide-code-btn" placeholder="请输入您的新的手机号码" style="width:198px;">
+        <span class="tips-container hide">输入错误</span><!-- 错误信息容器,出现2秒后消失 -->
+      </div><a href="" class="btn vert-btn code-btn">获取验证码</a>
+      <div class="check-container">
+        <input type="password" class="global-input" placeholder="请输入短信验证码">
+        <span class="tips-container hide">输入错误</span><!-- 错误信息容器,出现2秒后消失 -->
+      </div>
+      <div class="single-btn-area">
+        <input class="btn status1-btn" type="submit" value="确定">
+      </div>
+    </form>
+  </div>
+</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+<script>
+$('#popup_login').click(function() {
+  var from = location.href.split('?')[1];
+  var username = $('#popup_login_id').val();
+  var password = $('#popup_login_password').val();
+
+  if ($.trim(username) == '') {
+    $('#popup_login_id').next().show();
+    return false;
+  }
+
+  if ($.trim(password) == '') {
+    $('#popup_login_password').next().show();
+    return false;
+  }
+  M.loading();
+  $.post('/loginApi?mod=account&action=login', {
+    username : username,
+    password : password
+  }, function(d) {
+    if (d.code == 0) {
+	if(from=='account'){
+	 location.href = M.touchDomain;
+	}else{
+	 location.href =  M.touchDomain;
+	}
+       
+    } else {
+      M.loadingEnd();
+      $('#popup_login_error').show();
+    }
+  });
+  return false;
+}); 						
+</script>
+<% include includes/baidu %>
+</html>

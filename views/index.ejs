@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MES蛋糕-触屏版</title>
+    <% include includes/static_config %>
+    <% include includes/static_loader %>
+    <% include includes/head_script %>
+</head>
+<body>
+<div id="app_main" class="app-main app-nav">
+    <% include includes/header_v2 %>
+
+    <div class="wap-btn-area">
+        <ul>
+            <% for(var i in catoData){ %>
+            <li><a href="#<%= catoData[i].cls %>" data-cato="<%= catoData[i].cls %>" class="wap-btn sub_nav"
+                   style="margin-right:2px;padding-left:10px;padding-right:10px"><%= catoData[i].name %></a></li>
+            <% } %>
+        </ul>
+    </div>
+    <div class="scroll-area" style="padding-top:105px;background:#f0f0f0;">
+        <!-- for-love  for-happy for-dream -->
+        <div class="pro-content-area">
+            <% for(var i in catoData){ %>
+
+            <div class="pro-content clearfix cato_frame" id="<%= catoData[i].cls %>" style="display:none">
+                <div class="pro-list-area fl-l">
+                    <% for(var j = 0;j < catoData[i].cato.length;j++){ %>
+                    <% for(var m = 0;m < catoData[i].cato[j].data.length;m++){ %>
+                    <% if(goodsData[catoData[i].cato[j].data[m]]){ %>
+                    <div class="pro-list-item">
+                        <div class="pro-list-item-inner">
+                            <a href="/cake?id=<%= goodsData[catoData[i].cato[j].data[m]].goods_id %>"><img
+                                        class="lazyload" id="cvs_<%= i %>_<%= j %>_<%= m %>"
+                                        data-src="<%= goodsData[catoData[i].cato[j].data[m]].url %>" style=""></a>
+                            <h5>
+                                <span <% if(goodsData[catoData[i].cato[j].data[m]].goods_id == 32){ %>style="font-size:12px;"
+                                        <% } %>
+                                        ><%= goodsData[catoData[i].cato[j].data[m]].goods_name %></span>
+                                <span style="color:#fd578e; float:right; font-size:16px; font-weight:bold;">￥<%= goodsData[catoData[i].cato[j].data[m]].startprice %>
+                                    起</span></h5>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% } %>
+                    <% } %>
+                </div>
+            </div>
+            <% } %>
+        </div>
+        <% include includes/footer %>
+    </div>
+
+</div>
+<% include includes/baidu %>
+</body>
+<script>
+    (function () {
+        var catoFrame = $('.cato_frame');
+        var subNav = $('.sub_nav');
+        var maxScreenPic = 6;
+        catoFrame[0].style.display = 'block';
+        subNav[0].className += ' current'
+        subNav[CLICK](function () {
+            var id = $(this).data('cato');
+            console.log('id: ' + id);
+            var cur = $('#' + id);
+            if (id == 'for-dream') {
+                location.href = '/cake?id=1';
+                return;
+            }
+            subNav.removeClass('current');
+
+
+            $(this).addClass('current');
+            catoFrame.hide();
+            M.loading();
+            cur.scrollTop(0);
+            cur.show();
+            cur.addClass('animated-quick fadeIn');
+            setTimeout(function () {
+                renderCvs(cur);
+            }, 200);
+            setTimeout(function () {
+                M.loadingEnd();
+            }, 500);
+            return false;
+        });
+
+        $('.list_item')[CLICK](function () {
+            M.loading();
+            location.href = $(this).attr('href');
+            return false;
+        });
+        var renderCvs = function (parent, max) {
+            var lazyloadImage = $('.lazyload', parent);
+            if (lazyloadImage.length < 1) {
+                return;
+            }
+            var max = max || lazyloadImage.length;
+            for (var i = 0; i < max; i++) {
+                var imgId = lazyloadImage[i].id;
+                var imageCache = GET(imgId);
+                if (imageCache) {
+                    lazyloadImage[i].src = imageCache;
+                    continue;
+                }
+                var img = new Image();
+                img.index = i;
+                img.id = imgId;
+                img.crossorigin = "anonymous";
+                img.onload = function () {
+                    var _this = this;
+                    var zCvs = $('#' + this.id);
+                    var domCvs = zCvs[0];
+                    domCvs.src = this.src;
+                    zCvs.removeClass('lazyload');
+                    try {
+                        var cvs = document.createElement('canvas');
+                        cvs.style.display = 'none';
+                        document.body.appendChild(cvs);
+                        var rcvs = cvs.getContext('2d');
+                        cvs.width = 140;
+                        cvs.height = 108;
+                        rcvs.drawImage(this, 0, 0, 140, 108);
+                        setTimeout(function () {
+                            var data = cvs.toDataURL();
+                            SET(_this.id, data);
+                            document.body.removeChild(cvs);
+                        }, 200);
+                    } catch (ex) {
+
+                    }
+                }
+                img.src = lazyloadImage[i].getAttribute('data-src');
+            }
+        }
+        renderCvs(catoFrame[0]);
+    })();
+
+</script>
+</html>

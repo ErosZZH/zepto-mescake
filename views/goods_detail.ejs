@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MES-<%= goods.goods_name %></title>
+    <% include includes/static_config %>
+    <% include includes/static_loader %>
+    <% include includes/head_script %>
+</head>
+<body>
+
+<div id="app_main" class='app-main app-nav'>
+    <% include includes/header_v2 %>
+    <div class="wap-price-area" id="top_price"
+         style="position:absolute;top:50px;left:0px;width:100%;border:none;display:none;z-index:1000">
+        <p class="buy-price"><%= goods.goods_name %> <span class='init_price_tip'></span><em>￥</em><span
+                    class="display_price">0</span><span class='init_price_tip'></span></p>
+    </div>
+    <script type="tmpl" id="operate">
+        <p class="wap-pro-tip">* 产品照片为2磅蛋糕实物</p>
+        <div class="wap-price-area">
+            <p class="buy-price"><%= goods.goods_name %>
+                <span class='init_price_tip'></span>
+                <em>￥</em><span class="display_price">0</span>
+                <span class='init_price_tip'></span>
+            </p>
+            <div class="wap-price-intro" id="attr_sel" style="font-size:14px;display:none">
+                选择一个尺寸蛋糕<em class="check-down-ico"></em>
+            </div>
+            <div class="wap-check-area" style="" id="sel_list">
+                <p class="wap-check-tip">5磅以上蛋糕请提前24小时订购或致电客服咨询</p>
+            </div>
+        </div>
+
+
+    </script>
+
+    <div class="wap-bug-btn app-bottom" id="bottom_bar">
+        <a href="#" id="buy_now" class="btn big-btn status1-btn">立即购买</a>
+        <a href="#" id="add_to_cart" class="btn big-btn">加入购物车</a>
+    </div>
+
+    <div class="scroll-area">
+        <%- tmpl %>
+        <div class="material-area">
+            <div class="material-inner clearfix">
+                <div class="ma-item1">
+                    <div class="ma-title">
+                        <p class="mat-1">原材料</p>
+                    </div>
+                    <p class="ma-intro"><%= matrial %></p>
+
+                    <div class="ma-ico-area tl-c">
+                        <p><em class="ma-ico1"></em>含酒</p>
+
+                        <p class="marl-20"><em class="ma-ico2"></em>包含进口原料</p>
+                    </div>
+                </div>
+                <div class="ma-item2">
+                    <div class="ma-title">
+                        <p class="mat-2">保鲜</p>
+                    </div>
+                    <p class="ma-intro">0-4℃，冷藏保鲜24小时</p>
+
+                    <div class="ma-ico-area tl-c">
+                        <p><em class="ma-ico3"></em>最佳食用温度10℃</p>
+                    </div>
+                </div>
+                <div class="ma-item3">
+                    <div class="ma-title">
+                        <p class="mat-3">送货</p>
+                    </div>
+                    <p class="ma-intro">北京市五环内免费送货</p>
+
+                    <div class="ma-ico-area">
+                        <p class="clearfix"><em class="ma-ico4"></em>蛋糕在收到后2-3小时内食用最佳,如对本蛋糕
+                            食材有过敏经历者，请选择其他款蛋糕</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="check-size-area">
+
+
+        </div>
+        <script>
+            window.GOODS_ID = '<%=goods.goods_id%>';
+            Loader(['touch/js/goodsdetail.js']);
+        </script>
+    </div>
+</div>
+<% include includes/baidu %>
+</body>
+</html>

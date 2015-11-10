@@ -1,0 +1,21 @@
+<script>
+    M.checklogin(function (d) {
+        if (d) {
+            $('#nav_account').attr('href', '/account');
+            $('#nav_my_order').attr('href', '/myorder');
+        } else {
+            $('#nav_account').attr('href', '/login?from=account');
+            $('#nav_my_order').attr('href', '/login?from=myorder');
+
+        }
+    });
+
+    $('#logout')[CLICK](function () {
+        M.loading();
+        M.checkLogout(function () {
+            location.reload();
+        });
+    });
+
+    M.getShopCarCount(true);
+</script>

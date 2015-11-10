@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MES-我的订单</title>
+  <% include includes/static_config %>
+  <% include includes/static_loader %>
+  <% include includes/head_script %>
+</head>
+<body>
+<div id="app_main" class="app-main app-nav">
+  <% include includes/header_v2 %>
+  <div class="scroll-area">
+    <div class="content-area" id="container">
+      
+    </div>
+  </div>
+  <script>
+	M.loading();
+  </script>
+  <script src="<%=STATIC_DOMAIN%>touch/js/myorder.js"></script>
+</div>
+<% include includes/baidu %>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=2.0"/>
+  <title>新建地址</title>
+  <% include includes/static_config %>
+  <% include includes/static_loader %>
+  <% include includes/head_script_v2 %>
+</head>
+<body>
+<style type="text/css">
+  body{background: #fff;}
+</style>
+  <div id="app_main" class="app-main app-nav">
+    <div class="return-area"><a  href="/addressmanager" class="ra-ico"></a><span class="ra-con">新建地址</span></div>
+    <div class="scroll-area" style="padding-top:50px;">
+      <div style="padding:10px; background:#fff;">
+        <div class="check-container">
+          <input type="text" class="global-input has-bor-input" placeholder="收货人姓名" id="new_contact_popup"/>
+        </div>
+        <div class="check-container">
+          <input type="text" class="global-input has-bor-input" placeholder="联系电话" id="new_tel_popup"/>
+        </div>
+        <div class="clearfix tl-c">
+          <div class="check-container fl-l" style="width:20%;">
+            <input type="text" class="global-input has-bor-input" placeholder="北京市" />
+	     <input type="hidden" value="441" id="city_sel"/>
+          </div>
+          <div class="check-container fl-r" style="width:45%; display:none" id="street_container">
+            <input type="text" class="global-input has-bor-input" placeholder="请选择街道" id="street_picker"/>
+	       <input type="hidden" value="0" id="district_sel"/>
+          </div>
+          <div class="check-container" style="width:75%;" id="zone_container">
+            <input type="text" class="global-input has-bor-input" placeholder="请选择区" id="zone_picker"/>
+	  
+	    <input type="hidden" value="0" id="region_sel"/>
+          </div>
+        </div>
+        <div class="check-container">
+          <input type="text" class="global-input has-bor-input" placeholder="详细地址" id="new_address_popup"/>
+        </div>
+        <div class="tl-c" style="margin-top:20px;">
+          <a  class="btn big-btn status1-btn" style="width:40%;"  id="save_address">确认</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ <script>
+ Loader(['touch/js/picker.js','touch/js/newaddress.js']);
+ </script>
+<% include includes/baidu %>
+</body>
+</html>

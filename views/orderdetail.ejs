@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MES-订单详情</title>
+  <% include includes/static_config %>
+  <% include includes/static_loader %>
+  <% include includes/head_script %>
+</head>
+<body>
+
+<div id="app_main" class="app-main app-nav">
+  <% include includes/header_v2 %>
+  <div class="scroll-area" style="padding-bottom:100px;" id="container">
+    <p class="need-login-tip tl-r" style="display:none">您还没有设置访问密码，建议<a href="#" class="td-u">设置</a>以完成注册，方便查看订单信息。</p>
+    <h4 class="wap-order-title-item">订单信息</h4>
+  </div>
+</div>
+<script>
+M.loading();
+var orderId = "<%=orderId%>";
+</script>
+<script src="<%=STATIC_DOMAIN%>touch/js/detail.js"></script>
+<% include includes/baidu %>
+</body>
+</html>
